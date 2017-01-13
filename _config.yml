@@ -1,6 +1,6 @@
-baseurl: "" # The subpath of your site. Use "" if you're hosting a blog at the root level.
+baseurl: "https://bulgerxie.github.io" # The subpath of your site. Use "" if you're hosting a blog at the root level.
 url: "" # the base hostname & protocol for your site.
-title: "bulger-blog"
+title: "白果林"
 
 paginate: 6 #articles per page
 paginate_path: /blog/page:num #makes pagination working
