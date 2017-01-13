@@ -1,4 +1,4 @@
-baseurl: "https://bulgerxie.github.io" # The subpath of your site. Use "" if you're hosting a blog at the root level.
+baseurl: "" # The subpath of your site. Use "" if you're hosting a blog at the root level.
 url: "" # the base hostname & protocol for your site.
 title: "白果林"
 
