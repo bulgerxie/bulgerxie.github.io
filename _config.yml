@@ -16,7 +16,7 @@
 title: Bulger Blog
 email: 541898607@qq.com
 description: > # this means to ignore newlines until "baseurl:"
-  累了的话画画花,一切没有想象的那么糟
+  累了的话弹弹吉他,一切没有想象的那么糟
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username:
