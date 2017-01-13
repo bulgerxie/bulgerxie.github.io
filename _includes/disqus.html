@@ -1,4 +1,5 @@
-<div class="ds-thread"
+<div id="comment"
+     class="ds-thread"
      data-thread-key=""
      data-title=""
      data-url="">
@@ -15,9 +16,9 @@
         (document.getElementsByTagName('head')[0]
         || document.getElementsByTagName('body')[0]).appendChild(ds);
         $(".ds-thread").attr({
-            'data-thread-key':$('.post-title').find('h1').text(),
-            'data-title':$('.post-title').find('h1').text(),
-            'data-url':location.href
+            'data-thread-key': $('.post-title').find('h1').text(),
+            'data-title': $('.post-title').find('h1').text(),
+            'data-url': location.href
         });
     })();
 </script>
