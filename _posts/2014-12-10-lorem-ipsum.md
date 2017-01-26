@@ -3,71 +3,38 @@ title: "hello"
 tags: [lorem]
 ---
 
-Lorem markdownum potiunda maerenti vernum tantaeque arbore superstes vulnera,
-loqui voce inque auro, sed. Agros iussit infecere tincta animam, illa patris
-respicere neque laudibus; ut vomit, adamanta. Pari nec; hanc ordo illud naris
-terraeque, ferox dolendi.
+走走停停，山南水北多么美好。
 
+小吃街头熙熙攘攘，一声吆喝掀开人潮，“东看西看，没有我这里好看，这儿吃那儿吃，没有我这里好吃。”老板站在门槛前，一双大手好似菜刀，“哼哼哈哈”地斩断空气和刚拉好的粉条，引来围观者的一片叫好。
 
-# Fodiebant quodsi tetigisse sed septem esse paulum
+我屏息观看，一股懊恼滕然升起，来之前已经喝了一碗豆花，吃了盘烧白，手里还端着盒酸奶。抛开顾虑，说服自己，我就尝尝，妈的就是舔一舔也行啊。
 
-## Partes crescentem amor
+进门一屁股坐定，这会儿就是妈妈拿着拖鞋也休想把我撵走。把菜单从头翻到尾，还是要了份招牌粉。老板将锅里的粉丝捞出，点一抹猪油，浇一勺骨汤，洒上十几颗葱花，热情和香气四溢的粉被端上桌，“边吃边看，才最好看”，说完就蹭一下闪到门口继续吆喝去了，我乐得想拍大腿，感叹每一个自带音效的老男孩都是可爱的人。
 
+来这里的食客，大部分都是游人，远赴千里而来，奔着身心的自由而去。他们有的失意，有的失恋，有的面色泛黄，有的难诉衷肠，他们中的大多数在撑肠拄腹后被美食治愈，摸摸肚皮，“善待自己，吃饱了才有在雨中奔跑的力气”，我真佩服我自己。
 
-Se lexque nitente flumina iurabat gelidi in narrat longe quantaque formidine
-*supplex*. Amicis cerva quem proiecta auribus: ad et vide salutant, cecidisse
-enim alma expetitur.
+几天前把工作辞了，准备换一个地方快活。收到很多同事的鼓励，我以为我走得悄悄的，还是被他们暖了一把，好过自我安慰。
 
-## Fecitque Hyantea vertice iugalia poterat exiguo duri
+时常试着拿身边的事去匹配仅记得的几个句子，现在比较合适的是这句，“现在的年轻人，总是用大把的时间来迷茫，用几个瞬间来成长”。以时间段来切入，小学，初中，高中，大学，初入职场，中间穿插的友情，恋爱，变故，看过的书，交往的人，和所有的第一次，它们组成了一个交集，构造了现在的性格。像这样反馈周期特别长的属性，对于热情只有三秒的我，让我去塑造一个什么样的性格，还不如直接投胎来得痛快。索性在不影响别人的情况下让自己过得自在些。
 
-Nocte suis quas non, incumbens dum, time non e dederis praemia dea ligno. Virum
-et vanaque tot aures capillo illos, Huic surrexere animam tulimus cui calidis
-tertius exitiabile auras ire. Semine cupit Priamus raptu gremio et dissipat
-revocare Thetidis vultus adeundi flumina, in sedes quoque colloquium. Calcatis
-respondit at ruborem herba leto mea indoluit morte frondibus labaret in Haedis
-Auroram tuens.
+在第三次看《非诚勿扰》的时候，内心里老想着和葛大爷扮演的秦奋找到相似点给自己脸上贴金。但秦奋嘴里冒出的智慧并不是耍点小聪明就可以学到的，那是不折不扣的阅历。用电影里邬桑的话说，秦奋浪漫，满脑子都是不切实际的想法，内心里是个理想主义者，选择和周围的现实白刃相接。邬桑没有那么多不切实际的想法，他觉得笑笑和秦奋在一起于秦奋是不公平的，笑笑内心受伤，堵得慌，需要一个可靠的人倾诉，恰好遇上了风趣的秦奋。秦奋喜欢笑笑的心眼实诚和美丽善良，小心慎重地给笑笑依靠。
 
-    var array_reader_pebibyte = motherboard;
-    if (4 + printer > fileAgpPlatform) {
-        bus_compact(5);
-    }
-    if (public_rfid) {
-        gpu_volume.controllerWordart += windowsGraymailRw;
-        tcp(user_cpc);
-        ocrNtfs = 1;
-    }
-    var barVeronicaOverwrite = srgb_json;
-    var storage = 3;
+有一个场景给我印象深刻，在北海道的酒馆里，笑笑又仗着秦奋对自己的喜欢发问。
 
-Defecerat vates **in ille** corpore laetaris actutum oderat. Aptamque operitur
-pectus, et *notum contigit*: quin *voxque*, cura lumina clauditur letifer
-validum excutit **victor suum**. Adfata Laurentes mandate, Orchomenosque mihi
-affectibus medeare viridi; cum freta, columbis.
+“为什么你能容忍自己的女朋友心里还有别的男人”
 
-## Et ordine incinxit sensisse invitis Pulydamanta nunc
+“我就是看你傻，不可能貌合神离心猿意马，把这一篇翻过去了，又会对下一个人一心一意，所以才忍受着你这样”
 
-Quae et Cecrope uritur evincitque annis, oculis, ad causa vim aequore annis,
-parte arce tinctas cursu. Nocet solitaeque sinat ora trahit geminas gratissima
-quo cum **ignorat facies** passu; et! Medios et o!
+“那你不怕我长记性了，你的如意算盘落空”
 
-    heuristicCamelcasePermalink.frequencySmartOptical = fsbPaperPacket(
-            viralOfflineUdp) + 22;
-    var gnutella = 4;
-    var fileMtuUser = radcabDefault;
-    adapterMacintosh.ospf *= mirroredUnixPanel(keyExecutableDtd);
-    var fsbYahooBookmark = wan_fiber_linux(
-            unicode_keyboard.plug_bar_toggle.software_click(lockLossless + 69),
-            vlbWddmSpyware, ciscTunneling(whitelist, 87 / -5));
+“那我就把你卖给当地的渔民给生一大堆小孩...变成人见人躲的干巴小老太太”
 
-Medio ut o vulnera procul tremula forsitan denupsit nepotibus substiterat habet
-gramina ad quaeque ordine eiectantemque [illa](http://suaea.io/huc.php) et
-tutaque. Sinuosa causae, fugit *cum audent* siquid Tereus; quae Ancaeus invidiae
-de cedit. Pylius care est caerulaque grande, quem hostem: candida si illis
-ministri. Huic crudelis, triste quae conducat, serpentis fronte, terram. Aris
-**reducere proceres** miserae semper.
+“还有更难听的吗？”笑笑微笑着抬头。
 
-Dextera durastis in inde prope et asper flammis loqui Phorbas. Bisulco serpens
-adsilientis acta clangore digessit stamine quod: eras nobis sibi huius *dum*
-sum! Sono nos, a deusve, labori nomen habebat nobis nec tutela sinit. Herbarum
-mutentur utque pugnacem, oraque metuentior vergit: manus digitoque ante; quia
-dum, mores.
+“我就是看你长得好看，想跟你玩玩。你不拿我当回事，我也把你当做送上门来的”
+
+笑笑生气地摔门而出，秦奋拦着邬桑不让去追，“不说两句难听的她还真找不着北了”，秦奋坦言自己是真的准备娶她当媳妇，所以不敢轻举妄动。不敢轻举妄动还说话气别人，这就是高明的地方了，要是换了别人那还不百依百顺，结果自然就是没结果。
+
+我们有时候也会像秦奋那样表面上不计结果的付出，嘴里嚷着反正这是我乐意的，哪怕最后不在一起也不会遗憾，这话不仅骗不了别人，也骗不过自己，真正的喜欢，不是不动脑子的付出，而是能清晰地分析，找到两个人气味相投的地方，才是对自己负责。不知道要经历多少，才能明白和真正做到。
+
+丢掉纷扰，你看山南水北那么美好，要是喜欢，信马由缰之余，也多补补脑。
