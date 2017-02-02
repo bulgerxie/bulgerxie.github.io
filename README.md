@@ -2,6 +2,3 @@
 
 ## [https://bulgerxie.github.io](https://bulgerxie.github.io)
 
-## Screens
-
-![](screenshots/screenshots.png)
