@@ -55,7 +55,7 @@ JS里没有类的概念，实现继承完全是靠它的原型链。
 
 4.利用空对象作为媒介
 
-使用一个空对象的prototype指向父类的prototype，然后再用子类的prototype指向空对象的prototype，这样就避免了第3中方式的缺点。
+使用一个空对象的prototype指向父类的prototype，然后再用子类的prototype指向空对象的prototype，这样就避免了第3种方式的缺点。
 
 5.拷贝继承
 
