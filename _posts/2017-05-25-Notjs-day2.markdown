@@ -1,0 +1,23 @@
+---
+layout: post
+title:  "Day2 包装对象 "
+date:   2017-05-25
+categories: 我可能不会JavaScript
+excerpt: ""
+---
+
+{% highlight javascript %}  
+    问题:  
+    var s = "test";
+    s.len = 4;
+    console.log(s.len);   // ?
+{% endhighlight %}  
+我们经常遇到这样一种情况,使用字符串的`.length`属性来获取到一个字符串的长度,像这样
+{% highlight javascript %}  
+    var s = "test";
+    console.log(s.length);
+{% endhighlight %}  
+可是`s`明明是一个字符串,又不是对象,为什么会有属性?原来,只要引用了`s`的属性,`JavaScript`就会将字符串通过`new String(s)`的方式转换为对象,这个对象继承了字符串的方法,并用来处理属性的引用。一旦引用结束,这个新创建的对象就会被销毁。  
+
+所以在问题一里,第二行代码创建了一个临时字符串对象,在给其属性`len`赋值完毕后就被销毁,第三行代码又会新建一个字符串对象,但`s.len`只声明,没有定义,所以结果为`undefined`。同字符串一样,数字和布尔值也有它们自己的包装对象`Number()`和`Boolean()`。`null`和`undefined`没有包装对象,访问其属性会返回一个类型错误。  
+
