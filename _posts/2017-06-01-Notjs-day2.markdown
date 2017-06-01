@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Day2 包装对象 "
-date:   2017-05-25
+date:   2017-06-01
 categories: 我可能不会JavaScript
 excerpt: ""
 ---

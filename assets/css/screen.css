@@ -33,7 +33,7 @@ audio, canvas, video { display: inline-block; }
 audio:not([controls]) { display: none; height: 0; }
 [hidden], template { display: none; }
 html {
-   font-family: sans-serif;
+   font-family: Georgia, Times New Roman, Times, Songti SC, serif !important;
    -ms-text-size-adjust: 100%;
    -webkit-text-size-adjust: 100%;
 }
@@ -176,7 +176,7 @@ html {
 body {
     height: 100%;
     max-height: 100%;
-    font-family: "Merriweather", serif;
+    font-family: Georgia, Times New Roman, Times, Songti SC, serif !important;
     letter-spacing: 0.01rem;
     font-size: 1.8rem;
     line-height: 1.75em;
@@ -206,13 +206,11 @@ h4, h5, h6 {
 }
 
 h1 {
-    font-size: 5rem;
     letter-spacing: -2px;
     text-indent: -3px;
 }
 
 h2 {
-    font-size: 3.6rem;
     letter-spacing: -1px;
 }
 
@@ -233,7 +231,7 @@ h6 {
 }
 
 a {
-    color: #4A4A4A;
+    color: #ed6d62;
     transition: color ease 0.3s;
 }
 
@@ -674,7 +672,7 @@ margin on the iframe, cause it breaks stuff. */
     font-size: 2rem;
     line-height: 1.5em;
     font-weight: 400;
-    font-family: "Merriweather", serif;
+    font-family: Georgia, Times New Roman, Times, Songti SC, serif !important;
     letter-spacing: 0.01rem;
     color: rgba(255,255,255,0.8);
 }
@@ -718,8 +716,8 @@ margin on the iframe, cause it breaks stuff. */
     position: relative;
     width: 80%;
     max-width: 710px;
-    margin: 4rem auto;
-    padding-bottom: 4rem;
+    margin: 1em auto;
+    padding-bottom: 1rem;
     border-bottom: #EBF2F6 1px solid;
     word-break: break-word;
     hyphens: auto;
@@ -745,7 +743,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 body:not(.post-template) .post-title {
-    font-size: 3.6rem;
+    /*font-size: 3.6rem;*/
 }
 
 .post-title a {
