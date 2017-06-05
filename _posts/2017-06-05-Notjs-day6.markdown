@@ -37,4 +37,4 @@ DOM是针对XML经过拓展后用于HTML应用程序的编程接口。DOM使得�
 * `DOM(文档对象模型)`
 * `BOM(文浏览器对象模型)`
 
-这三者在现代的五个主流浏览器中得得到不同程度的支持，`ECMAScript3`基本支持，`ECMAScript5`还有部分未支持;对DOM结构彼此相差还是很大;BOM尽管在各个浏览器都实现了某些众所周知的功能，如window对象、navigator对象，其他特性还是会因浏览器各异。
+这三者在目前的五个主流浏览器(IE、Chrome、Firefox、Safari和Opera)中得到不同程度的支持，`ECMAScript3`基本支持，`ECMAScript5`还有部分未支持;对DOM结构彼此相差还是很大;BOM尽管在各个浏览器都实现了某些众所周知的功能，如window对象、navigator对象，其他特性还是会因浏览器各异。
