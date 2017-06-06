@@ -8,7 +8,7 @@ excerpt: ""
 #### 一、JavaScript简史  
 在Web刚兴起的时候，网速普遍都是28.8kbit/s，所以出现这么一个场景，“用户填写完一个表单，点击提交按钮，30秒过后服务器返回消息说有一个必填字段没有填写”。  
 
-为了解决这个问题，Netscape公司的Brendan Eich在1995年开发了出了LiveScript，发布前夕，为了搭上媒体炒热Java顺风车，临时改名为JavaScript。  
+为了解决在客户端实现简单验证的问题，Netscape公司的Brendan Eich在1995年开发了出了LiveScript，发布前夕，为了搭上媒体炒热Java顺风车，临时改名为JavaScript。  
 
 由于JavaScript发布后获得了巨大的成功，其它浏览器开发商也都做出了能在自己浏览器上运行的JavaScript版本，当时还没有标准规定JavaScript的语法和特性，所以在1997年的时候，出台了一个叫做ECMAScript的新脚本语言的标准。
 
