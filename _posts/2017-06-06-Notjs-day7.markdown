@@ -26,7 +26,7 @@ excerpt: ""
 #### 3、逗号操作符
 用于在一行语句中执行多个操作
 {% highlight javascript %}  
-    var num = (1，5，2，7，3);
+    var num = (1, 5, 2, 7, 3);
     alert(num);    //num = 3;
 {% endhighlight %} 
 #### 4、label语句
