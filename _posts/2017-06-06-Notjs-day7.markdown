@@ -1,0 +1,65 @@
+---
+layout: post
+title:  "Day7 散落在缝隙里的基本概念 "
+date:   2017-06-06
+categories: 《JavaScript高级程序设计》笔记
+excerpt: ""
+---
+大概算了一下，今天看js的基本核心概念花了5个小时左右，这些概念实现了ECMAScript的标准，可以说是很枯燥了，讲数据类型，讲语句，讲函数，10点的时候还看瞌睡了，赶紧打开音乐听逼哥吼两嗓子。幸好能拾得以下这些遗漏的点，才算这波不亏。果然，新鲜感才是让我活下去的动力。
+#### 1、typeof、undefined、null
+* `typeof 是唯一一个可以用于未声明变量而不报错的操作符(虽然delete也可以，但是没有任何意义，且在严格模式下会报错)`
+* `typeof null   //结果是object。因此null也经常被作为一个对象占位符，表示这个变量将来会用于保存对象。`
+* `undefined == null    //true。undefined派生自null，因此ECMAScript规定它们的相等性测试要返回true。`
+
+#### 2、数值类型
+##### ① 浮点数值
+{% highlight javascript %}  
+    0.1 + 0.2 == 0.3    //false
+{% endhighlight %} 
+真实结果是`0.30000000000000004`，这个问题出在JavaScript的数值类型采用的是IEEE 754 64位双精度浮点数编码上，有时间再去研究。避免方法就是不要测试某个特定的浮点数值。  
+##### ② 数值范围
+由于内存的限制，JavaScript也只能保存一定范围内的值，使用`Number.MIN_VALUE`可以拿到最小值，`Number.MAX_VALUE`拿到最大值。`isFinite()`函数可以判断一个数是否在范围之间。
+ {% highlight javascript %}  
+     var result = Number.MAX_VALUE + Number.MAX_VALUE;
+     alert(isFinite(result));   //false
+ {% endhighlight %}  
+#### 3、逗号操作符
+用于在一行语句中执行多个操作
+{% highlight javascript %}  
+    var num = (1，5，2，7，3);
+    alert(num);    //num = 3;
+{% endhighlight %} 
+#### 4、label语句
+使用label语句添加给标签，配合循环语句用，实例:
+{% highlight javascript %}  
+    var num = 0;
+    outermost:
+    for(var i=0; i < 10; i++) {
+        for(var j=0; j < 10; j++) {
+            if (i == 5 && j == 5) {
+                break outermost;
+            }
+            num++;
+        }
+    }
+    alert(num);     //55
+{% endhighlight %} 
+因为`break`语句不仅退出了当前循环，直接退出了设置标签为outermost的这层循环。  
+#### 5、函数参数
+都知道函数的参数可以用`arguments`对象来获取。有意思的是，`arguments`会永远和对应命名参数的值保持一致，且这种流动是双向的。实例:
+{% highlight javascript %}  
+    function doAdd1(num) {
+        alert(num);     //1
+        arguments[0] = 10;
+        alert(num);     //10
+    }
+    doAdd1(1);
+    function doAdd2(num) {
+        alert(arguments[0]);     //1
+        num = 10;
+        alert(arguments[0]);     //10
+    }
+    doAdd2(1);
+{% endhighlight %} 
+
+还有一些如`with`语句这样的不常用的且在大型应用并不适用的就不细说了。明天接着作用域、内存管理，应该会好玩多。
