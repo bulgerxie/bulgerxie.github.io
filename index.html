@@ -44,16 +44,17 @@ about: 'about.html'
             <!--<a class="read-more" href="{{ post.url }}">{{ post.excerpt }} &raquo;</a>-->
         </section>
         <footer class="post-meta">
-            {% if site.author %}
-                <!--<img class="author-thumb" src="/assets/images/profile.png" alt="Author's profile picture" nopin="nopin" />-->
-                {{ site.author }}
-            {% endif %}
-            {% if post.categories.size > 0 %} 
-                {{ post.categories | array_to_sentence_string | prepend: '→ ' }}
-            {% endif %}
+            <!--{% if site.author %}-->
+                <!--&lt;!&ndash;<img class="author-thumb" src="/assets/images/profile.png" alt="Author's profile picture" nopin="nopin" />&ndash;&gt;-->
+                <!--{{ site.author }}-->
+            <!--{% endif %}-->
             <time class="post-date" datetime="{{ post.date | date:'%Y-%m-%d' }}">
-                {{ post.date | date_to_string }}
-            </time> 
+                {{ post.date | date:'%Y-%m-%d' }}
+            </time>
+            {% if post.categories.size > 0 %} 
+                <!--{{ post.categories | array_to_sentence_string | prepend: '→ ' }}-->
+                {{ post.categories | array_to_sentence_string }}
+            {% endif %}
         </footer>
     </article>
 
