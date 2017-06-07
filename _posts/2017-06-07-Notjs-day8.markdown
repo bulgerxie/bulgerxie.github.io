@@ -3,6 +3,7 @@ layout: post
 title:  "Day8 作用域、内存问题 "
 date:   2017-06-07
 categories: 《JavaScript高级程序设计》笔记
+spend: 3.5h
 excerpt: ""
 ---
 #### 一、执行环境和作用域链

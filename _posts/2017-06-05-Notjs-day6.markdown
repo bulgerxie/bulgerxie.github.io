@@ -3,6 +3,7 @@ layout: post
 title:  "Day6 追寻js的本质、历史、局限性 "
 date:   2017-06-05
 categories: 《JavaScript高级程序设计》笔记
+spend: 3h
 excerpt: ""
 ---
 #### 一、JavaScript简史  
