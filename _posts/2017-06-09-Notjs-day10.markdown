@@ -1,0 +1,63 @@
+---
+layout: post
+title:  "Day10 引用类型完结篇"
+date:   2017-06-09
+categories: 《JavaScript高级程序设计》笔记
+spend: 
+excerpt: ""
+---
+如果标题取名以“你不知道”开头的话，那可能会写出30+篇出来。一开始我是通过W3C的中文手册来学习的，现在也常用它来当做手册查询。所以，我是拿了一个速查的手册在学习，并没有深入的理解，结果现在在书里看到的除了基础讲解，甚至连一些语言内置提供的方法也觉得新鲜。所以下次再学习新语言的时候还是直接看书实在点，否则早晚是要补回来的。  
+
+现在对于做记录也有了一点个人的想法。
+
+以前老师告诉我们"理解一个东西，你需要把它转化成自己的语言表述出来"，有模有样的学习背后，连做记录都是用自己的语言了，可是呀，写作者的语言凝练水平，不知道比我们高到哪里去，因此，概念性的解释，还是用作者的原句比较好。
+#### 一、基本包装类型
+前面写过一点[包装类型的常用实践](https://bulgerxie.github.io/%E6%88%91%E5%8F%AF%E8%83%BD%E4%B8%8D%E4%BC%9Ajavascript/2017/06/01/Notjs-day2.html)，这里就不多说了。现在记录一些内置提供的方法。
+* Number类型提供了`toFixed()`，该方法会返回指定小数位的数值字符串，接收一个指定位数的参数:
+{% highlight javascript %}  
+    var num = 30;
+    alert(num.toFixed(2));  //"30.00"
+{% endhighlight %} 
+妈妈笑了，儿子再也不用担心货币操作的小数点位数了
+* String类型提供的`replace()`方法，用于替子字符串，第一个参数为匹配项的字符串或是一个正则表达式，第二个参数为用于替换的字符串或者一个函数。简单地操作使用传入字符串就行，想要定制化的替换，可以试试传入函数的形式。
+{% highlight javascript %}  
+    function htmlEscape(text) {
+       return text.replace(/[<>"&]/g, function(match, pos, originalText) {
+            switch(match) {
+                case "<":
+                    return "&lt;";
+                case ">":
+                    return "&gt;";
+                case "&":
+                    return "&amp;";
+                case "\"":
+                    return "&quot;";
+            }
+       });
+    }
+    alert(htmlEscape("<span class=\"color\">hello</span>"));
+    //&lt;span class=&quot;color&quot;&gt;hello&lt;/span&gt;
+{% endhighlight %} 
+如果以函数作为第二个参数，该函数可以传入三个参数，分别为匹配项、匹配项在字符串中的位置和原始字符串。
+#### 二、单体内置对象
+引用书中对单体内置对象的定义:
+> 由ECMAScript实现提供、不依赖于宿主环境的对象，这些对象在ECMAScript程序执行之前就存在了。
+
+它实现了两个单体内置对象:Global个Math。
+##### 1.Global
+这个对象被认为是一个`兜底对象`，因为所有在全局作用域中定义的函数和方法，都是Global对象的属性，在浏览器中挂载到`window`对象上。诸如`Infinity`属性和`isNan()`、`parseInt()`方法。  
+
+值得一提的是，在使用全局方法eval()来执行JavaScript代码时，它所定义的内部变量不会出现变量提升。
+##### 2.Math
+至于Math对象，提供了很多辅助方法用于完成数学计算，记熟就行。  
+
+看到一个实践不错:
+{% highlight javascript %}  
+    function selectForm(lowerValue， upperValue) {
+        var choices = upperValue - lowerValue + 1;
+        return Math.floor(Math.random() * choices + lowerValue);
+    }
+    var num = selectForm(2， 10);
+    alert(num);     //num >= 2 && num <= 10  
+{% endhighlight %} 
+像这样做记录的代码，不是不能把它定义成自己的代码风格，但我没法比它做到更具语义化的定义，copy就好。
