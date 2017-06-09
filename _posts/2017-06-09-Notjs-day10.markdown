@@ -53,11 +53,11 @@ excerpt: ""
 
 看到一个实践不错:
 {% highlight javascript %}  
-    function selectForm(lowerValue， upperValue) {
+    function selectForm(lowerValue, upperValue) {
         var choices = upperValue - lowerValue + 1;
         return Math.floor(Math.random() * choices + lowerValue);
     }
-    var num = selectForm(2， 10);
+    var num = selectForm(2, 10);
     alert(num);     //num >= 2 && num <= 10  
 {% endhighlight %} 
 像这样做记录的代码，不是不能把它定义成自己的代码风格，但我没法比它做到更具语义化的定义，copy就好。
