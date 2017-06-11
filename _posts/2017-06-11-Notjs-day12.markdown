@@ -29,4 +29,4 @@ excerpt: ""
     }
 {% endhighlight%}
 #### 三、用函数作用域实现模块模式
-[《JS中常用的4中设计模式》](https://bulger-model.herokuapp.com/#/overview)
+[《JS中常用的4种设计模式》](https://bulger-model.herokuapp.com/#/overview)
