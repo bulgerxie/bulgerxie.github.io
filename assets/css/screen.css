@@ -184,6 +184,7 @@ body {
     -webkit-font-feature-settings: 'kern' 1;
     -moz-font-feature-settings: 'kern' 1;
     -o-font-feature-settings: 'kern' 1;
+    word-break: break-all;
 }
 
 ::-moz-selection {
@@ -331,6 +332,7 @@ code, tt {
     border: #E3EDF3 1px solid;
     background: #F7FAFB;
     border-radius: 2px;
+    word-break: break-all;
 }
 
 pre {

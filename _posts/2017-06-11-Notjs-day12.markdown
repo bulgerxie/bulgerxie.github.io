@@ -1,0 +1,32 @@
+---
+layout: post
+title:  "Day11 函数作用域"
+date:   2017-06-11
+categories: 《JavaScript高级程序设计》笔记
+spend: 1.5h
+excerpt: ""
+---
+#### 一、闭包中的内存泄漏
+由于闭包会引用包含函数的整个活动对象，导致在以引用计数作为垃圾回收策略的浏览器上出现内存泄漏问题，类似下面这样:
+{% highlight javascript %}
+    function assignHandler() {
+        var element = document.getElementById(someElement);
+        element.onclick = function() {
+            alert(element.id);  
+        };
+    }
+{% endhighlight%}
+闭包内引用了`element`，所以在函数执行完后element还是会继续保存在内存中，即使闭包没有直接引用到`element`，也会使得`element`元素不会被回收，因为包含闭包的`assignHandler`活动对象已经在闭包的作用域链上了。
+#### 二、递归函数
+在递归函数中，要始终使用arguments.callee来递归地调用自身，不要使用函数名，因为函数名可能会发生变化。
+{% highlight javascript %}
+    function factorial(num) {
+        if (num < 1) {
+            return 1;
+        } else {
+            return num * arguments.callee(num - 1);
+        }
+    }
+{% endhighlight%}
+#### 三、用函数作用域实现模块模式
+[《JS中常用的4中设计模式》](https://bulger-model.herokuapp.com/#/overview)
