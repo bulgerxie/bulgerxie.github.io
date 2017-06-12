@@ -22,7 +22,8 @@ excerpt: ""
 * location.reload()     //重新加载，如果页面自上次请求过后没有改变过，即从缓存加载，否则重新加载
 * location.reload(true)     //强制重新加载  
 
-可以使用`location.back()`和`location.forword()`代替`location.go()`来实现页面的前进和后退，更具语义化一点。  
+##### 3.location对象
+可以使用`location.back()`和`location.forward()`代替`location.go()`来实现页面的前进和后退，更具语义化一点。  
 #### 二、客户端检测
 * 能力检测:检查特定浏览器的能力。例如，在调用某个函数之前，检测该函数是否存在
 * 怪癖检测:检测浏览器是否有bug。
