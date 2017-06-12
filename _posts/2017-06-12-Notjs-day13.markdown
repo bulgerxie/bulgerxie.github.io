@@ -1,0 +1,32 @@
+---
+layout: post
+title:  "Day13 BOM和客户端检测"
+date:   2017-06-12
+categories: 《JavaScript高级程序设计》笔记
+spend: 4h
+excerpt: ""
+---
+#### 一、BOM
+##### 1.window对象—间隙调用和超时调用
+第一个参数尽量别使用字符串，可能会导致性能损失。改用:
+{% highlight javascript %}
+    setTimeout(function() {
+        alert(1);
+    },1000);
+{% endhighlight %}
+##### 2.location对象—位置函数
+* location.assign()
+* window.location()
+* location.href()
+* location.replace()，这个方法同以上三个方法一样，都可以改变url，区别是它不会被记入浏览器历史记录
+* location.reload()     //重新加载，如果页面自上次请求过后没有改变过，即从缓存加载，否则重新加载
+* location.reload(true)     //强制重新加载  
+
+#### 二、客户端检测
+* 能力检测:检查特定浏览器的能力。例如，在调用某个函数之前，检测该函数是否存在
+* 怪癖检测:检测浏览器是否有bug。
+* 用户代理检测:通过检查用户代理字符串来识别浏览器。
+
+使用优先级:能力检测 > 怪癖检测 > 用户代理检测  
+
+现在我们可以使用Modernizr.js来对浏览器所支持特性的做检测，根据检测出的结果来做相应的hack。
