@@ -1,0 +1,42 @@
+---
+layout: post
+title:  "Day15 事件"
+date:   2017-06-14
+categories: 《JavaScript高级程序设计》笔记
+spend: 
+excerpt: ""
+---
+#### 一、事件处理程序
+##### 1.DOM2级事件处理程序
+DOM0级就是讲一个函数赋值给事件处理程序,像这样:
+{% highlight javascript %}
+    var btn = document.getElementById('btn');
+    btn.onclick = function() {
+        alert(this.value);  
+    }
+{% endhighlight %}
+DOM2级提供了两个用于指定和删除事件处理程序的方法:
+* addEventListener
+* removeEventListener
+
+两个方法都接收三个参数:要处理的事件名、处理函数、布尔值。其中布尔值为`true`表示在捕获阶段调用处理函数,`false`在冒泡阶段调用。
+
+假设给按钮绑定一个click事件,如果使用DOM0级的方式,给按钮的`onclick`属性赋值为一个函数,将只能绑定一个click事件,多次绑定会覆盖前一个事件。
+
+而用`addEventListener`则可以绑定多个处理函数。如:
+{% highlight javascript %}
+    var btn = document.getElementById('btn');
+    btn.addEventListener('click', function() {
+        alert('first');
+    }, false);
+    btn.addEventListener('click', function() {
+        alert('second');
+    }, false);
+{% endhighlight %}
+这样将会先弹出first,然后又弹出second。
+
+值得一提的是,使用`removeEventListener`方法时,必须传入和`addEventListener`一样的参数才能移除处理函数,因此,如果处理函数是一个匿名函数的话,是没有办法被移除的。
+
+IE8以上才支持DOM2级方法。否侧使用`attachEvent`和`detachEvent`方法。接收要处理的事件名和处理函数两个参数,它们只支持事件冒泡。
+
+使用`attachEvent`和DOM0级方法的主要区别在于事件处理程序的作用域。使用DOM0级方法时,事件处理程序在所属元素的作用域内运行;而在使用`attachEvent`时,事件处理程序会在全局作用域运行。所以`this`等于`window`。
