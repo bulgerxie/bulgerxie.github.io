@@ -29,7 +29,7 @@ excerpt: ""
 
 ##### 3.插入标记
 * `innerHTML`写入`<script>`的话不会执行
-* 在插入大量HTML标记是，使用`innerHTML`比手动创建节点相率高得多，因为在设置`innerHTML`时，就会创建一个HTML解析器，这个解析器是在浏览器级别的代码上运行的，比执行JavaScript快得多。
+* 在插入大量HTML标记是，使用`innerHTML`比手动创建节点效率高得多，因为在设置`innerHTML`时，就会创建一个HTML解析器，这个解析器是在浏览器级别的代码上运行的，比执行JavaScript快得多。
 
 ##### 4.scrollIntoView
 通过滚动条滚动，让当前元素出现在视图中。
