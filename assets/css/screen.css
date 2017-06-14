@@ -178,7 +178,7 @@ body {
     max-height: 100%;
     font: 300 1em/1.8 "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
     letter-spacing: 0.01rem;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     line-height: 1.75em;
     color: #333;
     -webkit-font-feature-settings: 'kern' 1;
@@ -243,7 +243,7 @@ p, ul, ol, dl {
     -webkit-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
     -moz-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
     -o-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
-    margin: 0 0 1.75em 0;
+    margin: 0 0 1.3em 0;
 }
 
 ol, ul {
@@ -741,8 +741,8 @@ margin on the iframe, cause it breaks stuff. */
     box-shadow: #FFF 0 0 0 5px;
 }
 
-body:not(.post-template) .post-title {
-    /*font-size: 3.6rem;*/
+body:not(.post-template) .post-title.post-inner {
+    font-size: 3rem;
 }
 
 .post-title a {
