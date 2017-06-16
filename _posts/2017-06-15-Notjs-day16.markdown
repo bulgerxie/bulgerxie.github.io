@@ -3,7 +3,7 @@ layout: post
 title:  "Day16 事件(二)"
 date:   2017-06-15
 categories: 《JavaScript高级程序设计》笔记
-spend: 
+spend: 2h
 excerpt: ""
 ---
 ##### 2.textInput事件

@@ -1,0 +1,20 @@
+---
+layout: post
+title:  "Day17 表单"
+date:   2017-06-16
+categories: 《JavaScript高级程序设计》笔记
+spend: 
+excerpt: ""
+---
+#### 一、提交表单
+##### 1.submit事件
+在单击表单中的提交按钮后，浏览器会先触发表单的`submit`事件，然后才会将数据提交给服务器，因此，如果要做一些数据验证，就可以放到`submit`事件中去，如果得到不符合预期的数据，阻止事件的默认行为就可以取消表单提交。
+
+值得注意的是，如果是手动提交表单的话，将不会触发submit事件。如:
+{% highlight javascript %}
+    var form = document.getElementById('form');
+    form.submit();
+{% endhighlight %}
+这样将不会触发`submit`事件，所以要把数据验证写在提交之前。
+##### 2.reset事件
+手动调用`reset()`方法，依然会触发`reset`事件
