@@ -1,0 +1,61 @@
+---
+layout: post
+title:  "Day18 错误处理"
+date:   2017-06-18
+categories: 《JavaScript高级程序设计》笔记
+spend: 
+excerpt: ""
+---
+##### 1.try-catch语句
+{% highlight javascript %}
+    try{
+        //可能会发生错误的语句
+    } catch (error){
+        //发生错误时的处理语句
+    }
+{% endhighlight %}
+如果代码中存在`finally`子句，那么无论是否发生错误，都会执行它，且忽略其它语句中的return。如:
+
+{% highlight javascript %}
+    function testFanilly(){
+        try{
+            return 2;
+        } catch (error){
+            return 1;
+        } finally {
+            return 0;
+        }
+    }
+{% endhighlight %}
+最终返回0;
+##### 2.错误类型
+* Error 该类型是基类型，其它所有错误类型都继承自该类型
+* EvalError 错误使用`eval()`函数时调用，但有时报的是`TypeError`错误
+* RangeError 在数值超出相应范围时触发
+* ReferenceError 访问不存在的对象时触发
+* SyntaxError 把语法错误的`JavaScript`字符串传入`eval()`函数时触发
+* TypeError 在执行特定类型的操作时，变量的类型并不符合操作所致
+* URIError 使用`encodeURI()`和`decodeURI()`是，URI格式不正确所致
+
+##### 3.避免类型错误
+{% highlight javascript %}
+    function getQUeryString(url) {
+        if (typeof url == 'string') {  //恰当的类型检测
+            var pos = url.indexOf('?');
+            if (pos > -1) {
+                return url.subString(pos + 1);
+            }
+        }
+        return "";
+    }
+{% endhighlight %}
+
+{% highlight javascript %}
+    function reverseSort(array) {
+        if (values instanceof Array) {  //恰当的类型检测
+            array.sort();
+            array.reverse();
+        }
+    }
+{% endhighlight %}
+
