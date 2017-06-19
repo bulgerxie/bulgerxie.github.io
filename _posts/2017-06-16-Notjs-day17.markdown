@@ -3,7 +3,7 @@ layout: post
 title:  "Day17 表单"
 date:   2017-06-16
 categories: 《JavaScript高级程序设计》笔记
-spend: 
+spend: 1h
 excerpt: ""
 ---
 #### 一、提交表单

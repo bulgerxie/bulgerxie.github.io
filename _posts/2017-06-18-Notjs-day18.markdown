@@ -3,7 +3,7 @@ layout: post
 title:  "Day18 错误处理"
 date:   2017-06-18
 categories: 《JavaScript高级程序设计》笔记
-spend: 
+spend: 2h
 excerpt: ""
 ---
 ##### 1.try-catch语句
