@@ -1,0 +1,61 @@
+---
+layout: post
+title:  "Day20 AJAX(一)"
+date:   2017-06-20
+categories: 《JavaScript高级程序设计》笔记
+spend: 2h
+excerpt: ""
+---
+#### 一、XMLHttpRequest对象
+##### 1.XHR的用法
+{% highlight javascript %}
+    var xhr = new XHRHttpRequest();     //IE7+才支持这个对象
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 2) {
+            //将触发事件的按钮设置为禁用  
+        } else if (xhr.readyState === 4) {
+            if (xhr.status >= 200 && xhr.status <= 300 || xhr.status === 304) {
+                console.log(xhr.responseText);
+                //将触发事件的按钮解除禁用
+            }
+        }  
+    };
+    xhr.open("get", "text.php", true);
+    xhr.send(null);
+{% endhighlight %}
+
+`xhr.open()`的第三个参数是个布尔值，表示是否异步发送。  
+
+还可以使用`xhr.abort()`来取消异步请求，调用这个方法后，xhr对象会停止触发事件，也就是说xhr.onreadystatechange事件不会再触发，xhr对象的任何与响应有关的属性也不能再访问。  
+
+##### 2.HTTP头部信息
+在发送HTTP请求时，还会发送以下头部信息:
+* Accept: 浏览器能够处理的内容类型
+* Accept-Charset: 浏览器能够显示的字符集
+* Accept-Encoding: 浏览器能够处理的压缩编码
+* Accept-language: 浏览器当前设置的语言
+* Connection: 浏览器与服务器之间连接的类型
+* Cookie: 当前页面设置的任何Cookie
+* host: 接收请求的页面所在的域
+* referer: 发出请求页面的URI
+* User-Agent: 浏览器的用户代理字符串  
+
+我们可以使用XHR对象的`setRequestHeader()`方法自定义请求头，该方法接收两个参数，头部字段的名称和头部字段的值。该方法必须在`open()`方法后和`send()`方法前调用。  
+
+也可以使用`getResponseHeader()`传入头部字段名称，取得相应的响应头部信息;使用`getAllResponseHeaders()`取得所有头部信息。
+
+#### 二、FormData对象
+由于服务器对POST请求和提交表单的请求并不会一视同仁，所以服务器必须要有能从发送过来的原始解析出有用的部分，但我们也可以使用XHR对象来模仿表单提交。  
+
+我们需要改变把`Content-type`头信息改为:`appliation/x-www-form-urlencodeed`。  
+
+而现在，我们只需要在新建的`FormData`对象实例上，使用`append()`把键和值作为它的两个参数传进去，就可以把该实例放到`send()`方法中进行传递了，XHR对象在检测到`FormData`对象后，会自动执行头信息处理。
+
+#### 三、进度事件
+可以使用xhr对象的`progress`事件来监听浏览器接收新数据的进度，它会周期性的触发。  
+`onprogress`事件处理程序会接收一个event对象，对象包含很多属性，我们主要使用其中的三个属性:
+* lengthComputable: 进度信息是否可用
+* loaded: 已接受的字节数
+* total: 根据Content-Length响应头确定预期字节数
+
+
