@@ -233,10 +233,12 @@ h6 {
 a {
     color: #ed6d62;
     transition: color ease 0.3s;
+    text-decoration: none;
 }
 
 a:hover {
     color: #111;
+    text-decoration: underline;
 }
 
 p, ul, ol, dl {
@@ -1318,8 +1320,8 @@ body:not(.post-template) .post-title.post-inner {
 
 .copyright {
     display: block;
-    width: 45%;
-    float: left;
+    width: 100%;
+    text-align:center;
 }
 
 
