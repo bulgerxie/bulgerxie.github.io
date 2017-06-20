@@ -33,7 +33,7 @@ excerpt: ""
 * EvalError 错误使用`eval()`函数时调用，但有时报的是`TypeError`错误
 * RangeError 在数值超出相应范围时触发
 * ReferenceError 访问不存在的对象时触发
-* SyntaxError 把语法错误的`JavaScript`字符串传入`eval()`函数时触发
+* SyntaxError 存在语法错误时触发
 * TypeError 在执行特定类型的操作时，变量的类型并不符合操作所致
 * URIError 使用`encodeURI()`和`decodeURI()`是，URI格式不正确所致
 
