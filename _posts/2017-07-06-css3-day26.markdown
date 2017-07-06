@@ -1,0 +1,58 @@
+---
+layout: post
+title:  "Day26 CSS3的类选择器(二)"
+date:   2017-07-06
+categories: 《图解CSS3》笔记
+spend: 2h
+excerpt: ""
+---
+#### 二、伪元素
+##### 1.::first-letter
+选择文本块的第一个首字母，可以用作一些特效，比如首字母下沉:
+{% highlight html %}
+    <style>
+        p {
+            padding: 10px;
+            width: 200px;
+            border: 1px solid #262626;
+        }
+        p::first-letter {
+            float: left;
+            font: 50px/40px Georgia;
+        }
+    </style>
+    <body>
+        <p>This is a ::first-letter test.This is a ::first-letter test.This is a ::first-letter test.</p> 
+    </body>
+{% endhighlight %}
+![首字母下沉]()
+
+##### 2.::first-line
+选择文本的第一行
+
+##### 3.::before和::after
+用于插入额外内容的伪元素，一个实例是在链接之后附加它所指的URL。
+{% highlight html %}
+    <style>
+        a::after {
+            content: " (" attr(href) ") ";
+        }
+    <style>
+    <body>
+        <a href="https://www.google.com">google</a>
+    </body>
+{% endhighlight %}
+![链接]()
+
+##### 4.::selection
+给选中的文本设置样式，它只支持两个属性，`background`和`color`。
+
+#### 三、属性选择器里的通配符
+
+| 通配符 | 功能 | 示例 |
+| -- | -- | -- |
+| ^ | 匹配起始符 | [attr^=val] 匹配属性值是以val开头的元素 |
+| $ | 匹配终止符 | [attr$=val] 匹配属性值是以val结尾的元素 |
+| * | 匹配任意字符 | [attr*=val] 匹配属性值包含val的元素 |
+
+在IE7+以上得到支持。
