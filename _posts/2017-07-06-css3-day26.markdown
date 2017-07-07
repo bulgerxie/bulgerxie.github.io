@@ -25,7 +25,7 @@ excerpt: ""
         <p>This is a ::first-letter test.This is a ::first-letter test.This is a ::first-letter test.</p> 
     </body>
 {% endhighlight %}
-![首字母下沉]()
+![首字母下沉](http://navcd-1252873427.cosgz.myqcloud.com/head_img/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-07-06%20%E4%B8%8B%E5%8D%8811.42.19.png)
 
 ##### 2.::first-line
 选择文本的第一行
@@ -37,12 +37,12 @@ excerpt: ""
         a::after {
             content: " (" attr(href) ") ";
         }
-    <style>
+    </style>
     <body>
         <a href="https://www.google.com">google</a>
     </body>
 {% endhighlight %}
-![链接]()
+![链接](http://navcd-1252873427.cosgz.myqcloud.com/head_img/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-07-07%20%E4%B8%8A%E5%8D%889.08.33.png)
 
 ##### 4.::selection
 给选中的文本设置样式，它只支持两个属性，`background`和`color`。
