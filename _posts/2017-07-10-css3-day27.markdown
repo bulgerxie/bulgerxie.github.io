@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "Day27 border"
+date:   2017-07-06
+categories: 《图解CSS3》笔记
+spend: 2h
+excerpt: ""
+---
+##### 1.border的特殊应用
+1) 当`border-radius`的值小于或等于`border-width`时,元素边框内部就不具有圆角效果了  
+元素边框分为内边半径和外边半径,外边半径等于`border-radius`的值,`内边半径 = 外边半径 - 元素边框厚度`。当内边半径小于或等于0时,元素内角为直角。  
+
+2)元素相邻边有不同的宽度,这个角将会从宽的边平滑过渡到窄的一边,其中一条边甚至可以是0,元素相邻转角是由大向小转。  
+
+##### 2.表格应用圆角
+当给表格加上`border-collapse: collapse`属性后,圆角不能正常显示;只有当`border-collapse`属性为`separate`时,才会正常显示。
