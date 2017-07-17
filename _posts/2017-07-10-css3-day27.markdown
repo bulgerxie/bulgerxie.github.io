@@ -1,16 +1,56 @@
 ---
 layout: post
-title:  "Day27 border"
-date:   2017-07-06
+title:  "Day27 border 和 文本处理"
+date:   2017-07-10
 categories: 《图解CSS3》笔记
 spend: 2h
 excerpt: ""
 ---
+#### 一、border
 ##### 1.border的特殊应用
-1) 当`border-radius`的值小于或等于`border-width`时,元素边框内部就不具有圆角效果了  
-元素边框分为内边半径和外边半径,外边半径等于`border-radius`的值,`内边半径 = 外边半径 - 元素边框厚度`。当内边半径小于或等于0时,元素内角为直角。  
+1) 当`border-radius`的值小于或等于`border-width`时，元素边框内部就不具有圆角效果了  
+元素边框分为内边半径和外边半径，外边半径等于`border-radius`的值，`内边半径 = 外边半径 - 元素边框厚度`。当内边半径小于或等于0时，元素内角为直角。  
 
-2)元素相邻边有不同的宽度,这个角将会从宽的边平滑过渡到窄的一边,其中一条边甚至可以是0,元素相邻转角是由大向小转。  
+2)元素相邻边有不同的宽度，这个角将会从宽的边平滑过渡到窄的一边，其中一条边甚至可以是0，元素相邻转角是由大向小转。  
 
 ##### 2.表格应用圆角
-当给表格加上`border-collapse: collapse`属性后,圆角不能正常显示;只有当`border-collapse`属性为`separate`时,才会正常显示。
+当给表格加上`border-collapse: collapse`属性后，圆角不能正常显示;只有当`border-collapse`属性为`separate`时，才会正常显示。
+
+#### 二、文本处理
+##### 1.文本溢出处理
+在宽度固定时，当文本过长，我们通常会使用省略号来标记显示。IE6+以上都支持的，放心玩。
+{% highlight html %}
+    <style>
+        p {
+            width: 100px;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            text-overflow: ellipsis;  /*文本溢出时显示省略标记*/
+            white-space: nowrap;  /*强制不换行*/
+            overflow: hidden;  /*溢出内容隐藏*/
+        }
+    </style>
+    <body>
+        <p>我也不是很确定它会不会出现省略号</p> 
+    </body>
+{% endhighlight %}
+
+##### 2.文本换行
+word-break: 实现长单词或URL的换行  
+`word-wrap: nomal | break-word`  
+* normal: 默认值，浏览器只在半角空格或者连字符的地方进行换行
+* break-word: 将内容在边界内换行
+
+word-break: 自动换行处理  
+`word-break: normal | break-all | keep-all`  
+* normal: 默认值，中文到整个边界换行，英文从整个单词换行
+* break-all: 强制截断英文单词
+* keep-all: 不允许字断开。如果英文字符长度超过容器边界，后面的部分将撑破容器;如果边框为国定属性，则后面部分无法显示。
+
+##### 3.white-space属性
+`white-space: normal | pre | nowrap | pre-line | pre-wrap | inherit`
+* normal: 默认值，浏览器会忽略空白符
+* pre: 浏览器会保留空白符，和`<pre>`效果一致
+* nowrap: 文本不换行，直到遇到`<br/>`标签
+* pre-line: 合并空白序列，保留换行。IE7+支持
+* pre-wrap: 保留空白序列，正常换行
+* inherit: 继承父元素的`white-space`属性
