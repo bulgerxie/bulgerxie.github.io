@@ -348,6 +348,12 @@ pre {
     overflow: auto;
     background: #F7FAFB;
     border-radius: 3px;
+    background-image: -webkit-radial-gradient(#E4E7E9, transparent 16%),
+    -webkit-radial-gradient(#E4E7E9, transparent 16%),
+    -webkit-radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%),
+    -webkit-radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%);
+    background-position: 0 0px,8px 8px,0 1px,8px 9px;
+    background-size: 16px 16px;
 }
 
 pre code, tt {
@@ -682,6 +688,12 @@ margin on the iframe, cause it breaks stuff. */
     min-height: 160px;
     max-height: 40%;
     background: #f5f8fa;
+    background-image: -webkit-radial-gradient(#E4E7E9, transparent 16%),
+    -webkit-radial-gradient(#E4E7E9, transparent 16%),
+    -webkit-radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%),
+    -webkit-radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%);
+    background-position: 0 0px,8px 8px,0 1px,8px 9px;
+    background-size: 16px 16px;
 }
 
 .no-cover .page-title {
