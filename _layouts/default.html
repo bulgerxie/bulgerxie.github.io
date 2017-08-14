@@ -16,20 +16,16 @@
           href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400"/>
     <!-- Customisation  -->
     <link rel="stylesheet" type="text/css" href="/assets/css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css"/>
 
 </head>
 <body class="{% if page.post_class %}{{page.post_class}}{% else %}home-template{% endif %}">
 {{ content }}
-<footer class="site-footer clearfix">
-    <section class="copyright">
-        <a href="{{ site.baseurl }}">{{ site.name }}</a> &copy;All rights reserved.
-    </section>
-</footer>
 
 <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
 <script type="text/javascript" src="/assets/js/index.js"></script>
-
+<script type="text/javascript" src="/assets/js/particles.min.js"/>
 <!-- Google Analytics Tracking code -->
 <script type="text/javascript">
 
@@ -46,6 +42,10 @@
         s.parentNode.insertBefore(ga, s);
     })();
 
+</script>
+<!--particlesJS-->
+<script>
+    particlesJS.load('particles-js', 'assets/js/particlesjs-config.json', function() {});
 </script>
 </body>
 </html>
