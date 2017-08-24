@@ -2,7 +2,7 @@
 layout: post
 title:  "网络基础 TCP/IP"
 date:   2017-08-21
-categories: 《图解 TCP/IP》
+categories: 《图解TCP-IP》
 spend: 2h
 excerpt: ""
 ---
