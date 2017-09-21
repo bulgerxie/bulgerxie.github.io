@@ -936,6 +936,7 @@ body:not(.post-template) .post-title.post-inner {
     text-transform: uppercase;
     white-space: nowrap;
     float: right;
+    color: #9EABB3;
 }
 
 .user-image {
