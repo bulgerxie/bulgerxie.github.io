@@ -2,8 +2,8 @@
 layout: post
 title:  "读《JavaScript高级程序设计》笔记"
 date:   2017-05-31
-categories: 
-excerpt:  "" 
+categories:
+excerpt:  ""
 ---
 
 #### 目录
@@ -56,11 +56,11 @@ excerpt:  ""
   首先，null像在Java里一样，被当成一个对象。但是，JavaScript的数据类型分成原始类型（primitive）和合成类型（complex）两大类，Brendan Eich觉得表示‘无’的值最好不是对象。  
   其次，JavaScript的最初版本没有包括错误处理机制，发生数据类型不匹配时，往往是自动转换类型或者默默地失败。Brendan Eich觉得，如果null自动转为0，很不容易发现错误。  
   因此，Brendan Eich又设计了一个undefined。
-  
-  
+
+
 <a id="2" href="javascript:void(0)"></a>
 ### Day2 包装对象
-  
+
   {% highlight javascript %}  
       问题:  
       var s = "test";
@@ -73,9 +73,9 @@ excerpt:  ""
       console.log(s.length);
   {% endhighlight %}  
   可是`s`明明是一个字符串，又不是对象，为什么会有属性?原来，只要引用了`s`的属性，`JavaScript`就会将字符串通过`new String(s)`的方式转换为对象，这个对象继承了字符串的方法，并用来处理属性的引用。一旦引用结束，这个新创建的对象就会被销毁。  
-  
+
   所以在问题一里，第二行代码创建了一个临时字符串对象，在给其属性`len`赋值完毕后就被销毁，第三行代码又会新建一个字符串对象，但`s.len`只声明，没有定义，所以结果为`undefined`。同字符串一样，数字和布尔值也有它们自己的包装对象`Number()`和`Boolean()`。`null`和`undefined`没有包装对象，访问其属性会返回一个类型错误。
-   
+
 
 <a id="3" href="javascript:void(0)"></a>
 ### Day3 从闭包来看作用域
@@ -109,13 +109,13 @@ js里的闭包，简单来说就是`在函数内部定义一个函数`
     said();     //333
     nAdd();
     said();     //334
-{% endhighlight %} 
+{% endhighlight %}
 从结果里我们看到，执行了两次闭包函数`say2`，第一次结果为`333`，第二次为`334`，`n`作为`say1`的局部变量，并没有在函数调用完后被清除掉。原因在于`say1`是`say2`的父函数，但`say2`被赋给了全局变量`said`，这导致`say2`会始终在内存中，而`say2`依赖于`say1`，因此`say1`也会在内存中，不会被GC(垃圾回收机制)回收。  
 
 查了一下资料，大概了解了一下GC，得出如下总结:   
 
    `为了避免内存泄漏，语言引擎会释放内存中不再引用的资源，通常是用一张"引用表"来记录内存中所有资源的引用情况.如果一个值引用数为"0"，那么这块内存就会被释放.引用类型是在没有引用之后，会被GC自动回收，如果是处于闭包中值类型，则要等闭包没有引用时才会被回收.`
-   
+
 这样也就可以从根本上来解释变量`n`依然保存在内存中的原因了。
 
 <a id="4" href="javascript:void(0)"></a>
@@ -131,7 +131,7 @@ function setName(obj){
 var person = new Object();
 setName(person);
 alert(person.name);     //? bulger
-{% endhighlight %} 
+{% endhighlight %}
 好尴尬，又猜错了，这是为什么呢?我们慢慢来分析。  
 
 js的变量包含两种数据类型:基本数据类型和引用数据类型。我们分别来看用这两种数据类型作为参数传递时的情况。  
@@ -145,7 +145,7 @@ function add(num){
 num=10;
 alert(add(num));    //20
 aelrt(num);         //10
-{% endhighlight %} 
+{% endhighlight %}
 对于这个结果是不是也挺吃惊的。原来，在进行基本类型参数传递的时候，做了一个复制栈帧的拷贝动作，这样使得外部变量`num`和函数参数`num`具有了相同的值，但是它们参数地址完全不同，在函数调用结束后回收该栈帧，这种机制一定程度上避免了内存泄漏。所以改变了函数参数`num`，并不会对外部的变量`num`有影响。  
 
 ②引用数据类型:
@@ -157,7 +157,7 @@ var obj=new Object();
 setName(obj);
 alert(obj.name);
 //bulger
-{% endhighlight %} 
+{% endhighlight %}
 以上代码运行时，首先把新创建的Object对象的引用赋值给了obj，在进行参数传递时，同上一个方法一样，复制出一个栈帧给参数obj，使得两者拥有相同的值(`Object对象的引用地址`)，然后在setName做改变的时候，实际上改变了Object对象的值，改变完成后弹出该栈帧。那这样是否就可以得出js里的函数参数传递机制有`值传递`和`引用传递`两种方式了呢?
 
 不一定。先来看看函数参数传递机制的两种定义。
@@ -217,7 +217,7 @@ DOM是针对XML经过拓展后用于HTML应用程序的编程接口。DOM使得�
 ##### ① 浮点数值
 {% highlight javascript %}  
     0.1 + 0.2 == 0.3    //false
-{% endhighlight %} 
+{% endhighlight %}
 真实结果是`0.30000000000000004`，这个问题出在JavaScript的数值类型采用的是IEEE 754 64位双精度浮点数编码上，有时间再去研究。避免方法就是不要测试某个特定的浮点数值。  
 ##### ② 数值范围
 由于内存的限制，JavaScript也只能保存一定范围内的值，使用`Number.MIN_VALUE`可以拿到最小值，`Number.MAX_VALUE`拿到最大值。`isFinite()`函数可以判断一个数是否在范围之间。
@@ -230,7 +230,7 @@ DOM是针对XML经过拓展后用于HTML应用程序的编程接口。DOM使得�
 {% highlight javascript %}  
     var num = (1, 5, 2, 7, 3);
     alert(num);    //num = 3;
-{% endhighlight %} 
+{% endhighlight %}
 #### 4、label语句
 使用label语句添加给标签，配合循环语句用，实例:
 {% highlight javascript %}  
@@ -245,7 +245,7 @@ DOM是针对XML经过拓展后用于HTML应用程序的编程接口。DOM使得�
         }
     }
     alert(num);     //55
-{% endhighlight %} 
+{% endhighlight %}
 因为`break`语句不仅退出了当前循环，直接退出了设置标签为outermost的这层循环。  
 #### 5、函数参数
 都知道函数的参数可以用`arguments`对象来获取。有意思的是，`arguments`会永远和对应命名参数的值保持一致，且这种流动是双向的。实例:
@@ -262,7 +262,7 @@ DOM是针对XML经过拓展后用于HTML应用程序的编程接口。DOM使得�
         alert(arguments[0]);     //10
     }
     doAdd2(1);
-{% endhighlight %} 
+{% endhighlight %}
 
 还有一些如`with`语句这样的不常用的且在大型应用并不适用的就不细说了。明天接着作用域、内存管理，应该会好玩多。
 
@@ -286,11 +286,11 @@ JavaScript会周期性的监测出执行环境中不再使用的内存，然后�
     function problem() {
         var objA = new Object();
         var objB = new Object();
-        
+
         objA.attr = objB;
         objB.attr = objA;
     }
-{% endhighlight %} 
+{% endhighlight %}
 
 函数结束时objA和objB的引用数永远是都是2，所以不会被采用这种回收机制的浏览器所清除掉。  
 
@@ -314,11 +314,11 @@ indexOf和lastIndexOf是通过全等于(`===`)来查找匹配的
 {% highlight javascript %}  
     var person = { name: 'Tom' };
     var people = [{ name: 'Tom' }];
-    
+
     var morePeople = [person];
     alert(people.indexOf(person));  //-1
     alert(morePeople.indexOf(person));  //0    
-{% endhighlight %} 
+{% endhighlight %}
 且lastIndexOf是从末尾开始。
 ##### 2.迭代方法
 * every():对数组中的每一项运行给定函数，如果该函数每一项都返回true，那就返回true
@@ -331,12 +331,12 @@ indexOf和lastIndexOf是通过全等于(`===`)来查找匹配的
 
 使用`Date.parse()`方法可以把一个表示日期的字符串转换为相应的毫秒数，如:
 {% highlight javascript %}  
-    Date.parse('2017-06-8');     //1496851200000 
-    Date.parse('2017-6-08');     //1496851200000 
+    Date.parse('2017-06-8');     //1496851200000
+    Date.parse('2017-6-08');     //1496851200000
     Date.parse('2017-6-8');      //1496851200000
     Date.parse('2017-06-08');    //1496880000000
     (1496880000000 - 1496851200000)/(1000 * 3600);  //8
-{% endhighlight %} 
+{% endhighlight %}
 可以看到，前三种使用非`yyyy-mm-dd`格式的字符串，得到的返回值比使用`yyyy-mm-dd`格式得到的时间值少了8小时，格林威治作为世界时间，比中国的本地时间慢了8小时，因此我推测`yyyy-mm-dd`格式的字符串通过`Date.parse()`得到的是中国时间，否则就是世界时间。在真实的使用场景中，只要保证两端取同一个时区的时间来计算，也就不会出现误差了。
 
 #### 三、正则表达式-IE9以下的问题
@@ -374,7 +374,7 @@ apply()和call()，它们都是都是用来改变函数体内的`this`值，区�
 {% highlight javascript %}  
     var num = 30;
     alert(num.toFixed(2));  //"30.00"
-{% endhighlight %} 
+{% endhighlight %}
 妈妈笑了，儿子再也不用担心货币操作的小数点位数了
 * String类型提供的`replace()`方法，用于替子字符串，第一个参数为匹配项的字符串或是一个正则表达式，第二个参数为用于替换的字符串或者一个函数。简单地操作使用传入字符串就行，想要定制化的替换，可以试试传入函数的形式。
 {% highlight javascript %}  
@@ -394,7 +394,7 @@ apply()和call()，它们都是都是用来改变函数体内的`this`值，区�
     }
     alert(htmlEscape("<span class=\"color\">hello</span>"));
     //&lt;span class=&quot;color&quot;&gt;hello&lt;/span&gt;
-{% endhighlight %} 
+{% endhighlight %}
 如果以函数作为第二个参数，该函数可以传入三个参数，分别为匹配项、匹配项在字符串中的位置和原始字符串。
 #### 二、单体内置对象
 引用书中对单体内置对象的定义:
@@ -416,7 +416,7 @@ apply()和call()，它们都是都是用来改变函数体内的`this`值，区�
     }
     var num = selectForm(2, 10);
     alert(num);     //num >= 2 && num <= 10  
-{% endhighlight %} 
+{% endhighlight %}
 像这样做记录的代码，不是不能把它定义成自己的代码风格，但我没法比它做到更具语义化的定义，copy就好。
 
 <a id="10" href="javascript:void(0)"></a>
@@ -450,7 +450,7 @@ Object.defineProperty(book, "year", {
 });
 book.year = 2005;
 alert(book.edition);    //2
-{% endhighlight %} 
+{% endhighlight %}
 #### 二、继承
 对于这个主题，我看过不止4遍了，真正让我觉得通透的是返校拿毕业证那会儿，在图书馆里看到了一本薄薄的《Javascript面向对象精粹》，花了两天看完，深入简出，很是喜欢，后来还买了一本送朋友。
 ##### 1.构造函数继承
@@ -811,11 +811,11 @@ JSON对象有两个方法:
 
 <a id="19" href="javascript:void(0)"></a>
 ### Day19 AJAX(一)
- 
+
 #### 一、XMLHttpRequest对象
 ##### 1.XHR的用法
 {% highlight javascript %}
-    var xhr = new XHRHttpRequest();     //IE7+才支持这个对象
+    var xhr = new XMLHttpRequest();     //IE7+才支持这个对象
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 2) {
             //将触发事件的按钮设置为禁用  
@@ -881,7 +881,7 @@ JSON对象有两个方法:
 
 <a id="21" href="javascript:void(0)"></a>
 ### Day21 高级技巧
- 
+
 ##### 1.作用域安全的构造函数
 {% highlight javascript %}
     function Person(name, age){
@@ -939,7 +939,7 @@ JSON对象有两个方法:
 
 <a id="22" href="javascript:void(0)"></a>
 ### Day22 最佳实践-可维护性
- 
+
 #### 一、可维护性
 可维护性的代码需要遵循以下几点:
 * `直观性`: 让代码简单易懂
@@ -990,7 +990,7 @@ JSON对象有两个方法:
 {% endhighlight %}
 
 ##### 4.优化循环
-* 减值迭代 
+* 减值迭代
 * 简化终止条件: 使用减值迭代后，终止条件的算法复杂度为O(1)
 * 简化循环体
 * 使用后测试循环: do-while语句
@@ -1042,6 +1042,6 @@ HTML5中提供了一些API，让浏览器也可以访问本地文件。各浏览
             };
         }
     }, false)
-{% endhighlight %} 
+{% endhighlight %}
 
 End!
