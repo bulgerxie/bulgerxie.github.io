@@ -56,3 +56,5 @@ history.replaceState(state2, "new page2", "new2.html");
 [https://link-router.herokuapp.com/?area=asia](https://link-router.herokuapp.com/?area=asia)
 
 却没有添加历史记录,所以浏览器返回按钮不可用。
+
+和`hash`实现的方式比起来,`history`还需要服务端的配合才能有更好的用户体验,否则直接访问一个带文件路径的页面就会返回404了,而`hash`使用的是锚点的方式,不存在也不会出现显性的错误提示。
