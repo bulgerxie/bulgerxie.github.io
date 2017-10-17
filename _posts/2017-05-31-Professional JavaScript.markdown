@@ -35,11 +35,11 @@ excerpt:  ""
 ### Day1 相等符(==)
 过去的某一天里，突然看到了一篇叫做[《如何通过饿了吗NodeJS面试》](https://github.com/ElemeFE/node-interview/tree/master/sections/zh-cn)的文章，里面提了几个关于js的基础问题，看后却没有一点头绪，我想确实该补一下知识了，那就打开犀牛书，每天记录一点吧!
 {% highlight javascript %}  
-    问题一:  
+    //问题一:  
     temp==undefined?   // 报错  
-    问题二:  
+    //问题二:  
     [1]==[1]?           // false
-    问题三:  
+    //问题三:  
     undefined==null?    // true
 {% endhighlight %}  
 
@@ -62,7 +62,7 @@ excerpt:  ""
 ### Day2 包装对象
 
   {% highlight javascript %}  
-      问题:  
+      //问题:  
       var s = "test";
       s.len = 4;
       console.log(s.len);   // ?
