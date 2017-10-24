@@ -6,7 +6,6 @@ categories:
 spend: 2h
 excerpt: ""
 ---
-在新公司使用vue + element + webpack开发也有大半年了,把日常开发遇到的问题稍加记录,对着文档查缺补漏,得此小结。
 
 #### 一、数据处理
 ##### 1.引用类型的坑
