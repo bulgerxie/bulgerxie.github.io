@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CSS Variables"
+title:  "CSS Variables (下一代 CSS )"
 date:   2017-11-01
 categories: CSS
 spend: 
@@ -29,7 +29,7 @@ CSS变量，也叫做CSS自定义属性。他们可用于减少CSS中的重复�
 
 我们定义了一个`--mainColor`的变量，然后使用`var()`函数来使用这个变量。
 
-##### 语法
+#### 语法
 
 自定义属性的语法很简单:
 {% highlight html %}
@@ -41,7 +41,7 @@ CSS变量，也叫做CSS自定义属性。他们可用于减少CSS中的重复�
 {% endhighlight %}
 虽然这样的写法在普通属性中是无效的，但它可以在运行时被Javascript读取并执行，这是预处理器所不能做到的。
 
-##### 级联
+#### 级联
 
 自定义属性遵循标准级联规则
 {% highlight html %}
@@ -80,7 +80,7 @@ CSS变量，也叫做CSS自定义属性。他们可用于减少CSS中的重复�
 
 这是SASS不能做到的，因为它不能在媒体查询中定义变量。
 
-##### var()函数
+#### var()函数
 我们使用`var()`函数来引用自定义属性
 {% highlight html %}
     var(<custom-property-name> [, <declaration-value> ]? )
@@ -113,7 +113,7 @@ CSS变量，也叫做CSS自定义属性。他们可用于减少CSS中的重复�
 
 ![var函数](http://navcd-1252873427.cosgz.myqcloud.com/head_img/var%E5%87%BD%E6%95%B0.png)
 
-##### 用calc()构建值
+#### 用calc()构建值
 可以使用`calc()`函数来动态生成值
 {% highlight html %}
     .foo {
@@ -122,7 +122,8 @@ CSS变量，也叫做CSS自定义属性。他们可用于减少CSS中的重复�
     }
 {% endhighlight %}
 
-##### 在JavaScript中使用自定义属性
+#### 在JavaScript中使用自定义属性
+现有一段自定义属性如下:
 {% highlight html %}
     /* CSS */
     :root {
@@ -136,7 +137,7 @@ CSS变量，也叫做CSS自定义属性。他们可用于减少CSS中的重复�
     <!-- HTML -->
     <p>this is orange</p>
 {% endhighlight %}
-现有一段自定义属性如上，使用`getPropertyValue()`方法可以获取到自定义属性的值。
+使用`getPropertyValue()`方法可以获取到自定义属性的值。
 {% highlight javascript %}
     var styles = getComputedStyle(document.documentElement);
     var value = String(styles.getPropertyValue('--mainColor')).trim();
@@ -149,9 +150,11 @@ CSS变量，也叫做CSS自定义属性。他们可用于减少CSS中的重复�
 {% endhighlight %}
 
 还可以设置成一个var()调用中的函数，在运行时调用另一个自定义属性
-{% highlight javascript %}C
+{% highlight javascript %}
     document.documentElement.style.setProperty('--mainColor', 'var(--secondaryColor)');
 {% endhighlight %}
 
-##### 浏览器支持
+#### 浏览器支持
 目前Chrome 49，Firefox 42，Safari 9.1和iOS Safari 9.3支持自定义属性。
+
+对于不兼容的浏览器,也有相应的解决方案，[postcss](http://postcss.org/) 提供了一个插件 [cssnext](http://postcss.org/) 可以把下一代的CSS转化为目前通用的CSS。

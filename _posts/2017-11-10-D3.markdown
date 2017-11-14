@@ -1,0 +1,69 @@
+---
+layout: post
+title:  "D3.js 初探究"
+date:   2017-11-10
+categories: CSS
+spend: 
+excerpt: ""
+---
+
+看到阿里的大数据部门招聘,里面有一句话很可爱。
+
+> 你以为你在搞大数据可视化,其实只是背熟了Echarts的API。
+
+哈哈,谁说不是呢?所以先来看看究竟什么是大数据可视化。
+
+维基百科里对于数据可视化的描述:
+> 数据可视化是关于数据之视觉表现形式的研究；其中，这种数据的视觉表现形式被定义为一种以某种概要形式抽提出来的信息，包括相应信息单位的各种属性和变量
+
+那我们前端大概就是需要做可视化的视觉呈现部分了,嗯,对,还是只能用图表的展现形式。妈的不是表格,非要我说chart才行吗?
+
+2D的图表主要靠SVG或者Canvas来实现。但是继续用原生的JS来写的话,代码肯定是很冗长的,所以我选了一个很火热的可视化库 [d3.js](https://github.com/d3/d3) ,有多火?在github上JS这一块的分类排第4,仅次于BootStrap、React和Vue。可以说,在数据可视化方向上,这个框架独领风骚。
+
+#### D3: Data-Driven Documents
+顾名思义,这是一个数据驱动文档。它可以帮助我们使用HTML、CSS、SVG和Canvas来展示数据。就是将数据绑定到DOM上,然后通过计算这些数据得到DOM上的属性值,构建你想要的展示方式。
+
+插入如下代码即可使用:
+{% highlight html %}
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+{% endhighlight %}
+
+#### 写一个Bar Chart
+我想实现一个这样的柱形图:
+![chart](http://navcd-1252873427.file.myqcloud.com/blog_img/BarChart.png)
+
+我们先来分析一把,柱状图的组成元素都是矩形,恰好SVG提供了标签
+
+`<rect x="" y="" width="" height="" fill="">`
+
+可以快速画出矩形,其中 x 和 y 代表矩形左上角的坐标, fill 代表填充矩形的颜色。坐标轴如下:
+![grid](http://navcd-1252873427.file.myqcloud.com/blog_img/grid.png)
+
+SVG的实现如下:
+{% highlight html %}
+    <svg width="500" height="300" style="margin:50px 100px;">
+        <g transform="translate(40,20)">
+            <!-- X轴 -->
+            <g class="axis axis--x" transform="translate(0,250)" fill="none" font-size="10" font-family="sans-serif"
+               text-anchor="middle">
+                <path class="domain" stroke="#000" d="M0.5,6V0.5H440.5V6"></path>
+                <!-- 省略了坐标点 -->
+            </g>
+            <!-- Y轴 -->
+            <g fill="none" font-size="10" font-family="sans-serif" text-anchor="end">
+                <path class="domain" stroke="#000" d="M-6,250.5H0.5V0.5H-6"></path>
+                <!-- 省略了坐标点 -->
+            </g>
+            <rect class="bar" x="7" y="89" width="49" height="161"></rect>
+            <rect class="bar" x="61" y="221" width="49" height="29"></rect>
+            <rect class="bar" x="115" y="195" width="49" height="55"></rect>
+            <rect class="bar" x="169" y="166" width="49" height="84"></rect>
+            <rect class="bar" x="223" y="0" width="49" height="250"></rect>
+            <rect class="bar" x="277" y="205" width="49" height="45"></rect>
+            <rect class="bar" x="331" y="210" width="49" height="40"></rect>
+            <rect class="bar" x="385" y="130" width="49" height="120"></rect>
+        </g>
+    </svg>
+{% endhighlight %}
+
+上面的代码我省略了坐标点的绘制,要不然你一眼都看不见我了。而且那么多的 x 值 y 值, path 路径,完全记不过来好吗?其实在实际开发中,这些都是利用代码库计算得出的,像D3提供给我们的API一样可以做到。
