@@ -57,6 +57,7 @@ history.replaceState(state2, "new page2", "new2.html");
 
 却没有添加历史记录，所以浏览器返回按钮不可用。
 
+[代码在这里](https://github.com/bulgerxie/bulgerxie.github.io/blob/master/assets/example/router.html)
 
 #### 4.history对比hash实现
 
