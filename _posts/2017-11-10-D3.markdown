@@ -39,7 +39,7 @@ excerpt: ""
 可以快速画出矩形,其中 x 和 y 代表矩形左上角的坐标, fill 代表填充矩形的颜色。坐标轴如下:
 ![grid](http://navcd-1252873427.file.myqcloud.com/blog_img/grid.png)
 
-SVG的实现如下:
+使用SVG的实现如下:
 {% highlight html %}
     <svg width="500" height="300" style="margin:50px 100px;">
         <g transform="translate(40,20)">
