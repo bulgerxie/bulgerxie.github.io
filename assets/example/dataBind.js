@@ -22,6 +22,7 @@ class Observe {
     this.callback = callback;
   }
 
+  // 监听对象, 参数fatherPath代表属性的父节点
   watch(obj, fatherPath = '') {
     Object.keys(obj).forEach(key => {
       let oldVal = obj[key];
@@ -51,7 +52,7 @@ class Observe {
     })
   })
   }
-
+  // 监听数组
   observeArray(array, path) {
     let self = this;
     let arrPro = Object.create(arrayPrototype);
