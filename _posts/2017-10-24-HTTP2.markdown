@@ -2,7 +2,7 @@
 layout: post
 title:  "Web性能优化之TTP2"
 date:   2017-10-24
-categories: 网络基础
+category: 网络基础
 spend: 
 excerpt: ""
 ---

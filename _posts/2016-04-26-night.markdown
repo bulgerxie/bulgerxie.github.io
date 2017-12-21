@@ -2,7 +2,7 @@
 layout: post
 title:  "又夜不能寐了"
 date:   2016-04-26
-categories: 随笔
+category: 随笔
 excerpt: ""
 ---
 

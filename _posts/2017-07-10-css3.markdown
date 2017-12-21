@@ -2,7 +2,8 @@
 layout: post
 title:  "CSS3的小tips"
 date:   2017-07-10
-categories: 《图解CSS3》笔记
+category: CSS
+tags: 《图解CSS3》笔记
 spend: 2h
 excerpt: ""
 ---

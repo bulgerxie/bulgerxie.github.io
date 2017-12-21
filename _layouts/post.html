@@ -1,39 +1,44 @@
----
-layout: default
-disqus: false
-archive: false
-post_class: post-template
----
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>{{ page.title }}</title>
+    <meta name="description" content="{{ site.meta_description}}"/>
 
-<header class="main-header post-head {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
-    <nav class="main-nav {% if page.cover %} overlay {% endif %} clearfix">
-        <a class="back-button icon-arrow-left" href="/">Home</a>
-        <!--<a class="subscribe-button icon-feed" href="{{ site.baseurl }}feed.xml">Subscribe</a>-->
-    </nav>
-</header>
-
+    <meta name="HandheldFriendly" content="True"/>
+    <meta name="MobileOptimized" content="320"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <link rel="stylesheet" href="/assets/css/index.css">
+    <link rel="stylesheet" href="/assets/css/highlight.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+</head>
+<body class="post">
+<div class="back-wrap">
+    <a class="btn-back" type="button" href="javascript:history.go(-1)">返回</a><br>
+</div>
 <main class="content" role="main">
 
-    <article class="post">
+    <article>
         <header class="post-header">
             <h1 class="post-title post-inner">{{ page.title }}</h1>
         </header>
 
-<!--         <header class="post-header">
-            <a id="blog-logo" href="{{site.url}}">
-                {% if site.logo %}
-                    <img src="{{site.logo}}" alt="{{ site.name }}" />
-                {% else %}
-                    <span class="blog-title">{{ site.name }}</span>
-                {%endif%}
-            </a>
-        </header> -->
+        <!--         <header class="post-header">
+                    <a id="blog-logo" href="{{site.url}}">
+                        {% if site.logo %}
+                            <img src="{{site.logo}}" alt="{{ site.name }}" />
+                        {% else %}
+                            <span class="blog-title">{{ site.name }}</span>
+                        {%endif%}
+                    </a>
+                </header> -->
 
         <!--<span class="post-meta">-->
-            <!--<time datetime="{{ page.date | date:'%Y-%m-%d' }}">{{ page.date | date:'%Y-%m-%d' }}</time>-->
-            <!--{% if page.categories.size > 0 %}-->
-                <!--{{ page.categories | array_to_sentence_string | prepend: 'on ' }}-->
-            <!--{% endif %}-->
+        <!--<time datetime="{{ page.date | date:'%Y-%m-%d' }}">{{ page.date | date:'%Y-%m-%d' }}</time>-->
+        <!--{% if page.categories.size > 0 %}-->
+        <!--{{ page.categories | array_to_sentence_string | prepend: 'on ' }}-->
+        <!--{% endif %}-->
         <!--</span>-->
 
         <!-- <h1 class="post-title">{{ page.title }}</h1> -->
@@ -44,5 +49,25 @@ post_class: post-template
 
 
     </article>
-
+    <div id="gitalk-container"></div>
 </main>
+<script src="/assets/js/jquery/jquery-3.2.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+  $(function () {
+    gitComment();
+  });
+  function gitComment() {
+    var gitalk = new Gitalk({
+      clientID: '1329e94440d90ec55e8a',
+      clientSecret: 'b8082c6ad64477bb4f4502344226f9d0ce8ea719',
+      repo: 'https://github.com/bulgerxie/bulgerxie.github.io.git',
+      owner: 'bulgerxie',
+      admin: ['bulgerxie'],
+    });
+
+    gitalk.render('gitalk-container');
+  }
+</script>
+</body>
+</html>

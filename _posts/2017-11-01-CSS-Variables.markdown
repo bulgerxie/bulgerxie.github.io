@@ -2,7 +2,7 @@
 layout: post
 title:  "CSS Variables (下一代 CSS )"
 date:   2017-11-01
-categories: CSS
+category: CSS
 spend: 
 excerpt: ""
 ---

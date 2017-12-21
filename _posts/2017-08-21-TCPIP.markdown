@@ -2,7 +2,7 @@
 layout: post
 title:  "网络基础 TCP/IP"
 date:   2017-08-21
-categories: 网络基础
+category: 网络基础
 spend: 2h
 excerpt: ""
 ---

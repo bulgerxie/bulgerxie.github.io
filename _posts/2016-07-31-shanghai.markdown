@@ -2,7 +2,7 @@
 layout: post
 title:  "唇鱼一般没有烦恼"
 date:   2016-07-31
-categories: 随笔
+category: 随笔
 excerpt: ""
 ---
 

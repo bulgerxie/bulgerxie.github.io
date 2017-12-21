@@ -3,50 +3,85 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-
     <title>{{ page.title }}</title>
     <meta name="description" content="{{ site.meta_description}}"/>
 
     <meta name="HandheldFriendly" content="True"/>
     <meta name="MobileOptimized" content="320"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css"/>
-    <link rel="stylesheet" type="text/css"
-          href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400"/>
-    <!-- Customisation  -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/main.css"/>
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css"/>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 </head>
-<body class="{% if page.post_class %}{{page.post_class}}{% else %}home-template{% endif %}">
-{{ content }}
-
-<script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
-<script type="text/javascript" src="/assets/js/index.js"></script>
-<script type="text/javascript" src="/assets/js/particles.min.js"/>
-<!-- Google Analytics Tracking code -->
-<script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', '{{ site.google_analytics }}']);
-    _gaq.push(['_trackPageview']);
-
-    (function () {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-        ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-    })();
-
-</script>
-<!--particlesJS-->
+<body class="index">
+<header class="header-title">
+    <div class="letter-title">
+        <div class="letter-title-s" data-animate-in="RtoL" data-animate-out="LtoR"></div>
+        <div class="letter-title-a" data-animate-in="RtoL" data-animate-out="LtoR"></div>
+        <div class="letter-title-y" data-animate-in="TtoB" data-animate-out="BtoT"></div>
+        <div class="letter-title-h" data-animate-in="LtoR" data-animate-out="RtoL"></div>
+        <div class="letter-title-e" data-animate-in="BtoT" data-animate-out="TtoB"></div>
+        <div class="letter-title-l" data-animate-in="TtoB" data-animate-out="BtoT"></div>
+        <div class="letter-title-l" data-animate-in="TtoB" data-animate-out="BtoT"></div>
+        <div class="letter-title-o" data-animate-in="RtoL" data-animate-out="LtoR"></div>
+    </div>
+</header>
+<div class="content">
+    <div class="post">
+        <ul>
+            {% for post in site.posts %}
+            <li>
+                <a href="{{ post.url }}">{{ post.title }}</a>
+                <time class="pull-right" datetime="{{ post.date | date:'%Y-%m-%d' }}">
+                    {{ post.date | date:'%Y-%m-%d' }}
+                </time>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <!--<div class="category">-->
+        <!--<div class="pull-right">-->
+            <!--<h2>Categories</h2>-->
+            <!--{% for category in site.categories %}-->
+            <!--<div>-->
+                <!--<a href="">{{ category | first }}({{ category | last | size }})</a>-->
+            <!--</div>-->
+            <!--{% endfor %}-->
+        <!--</div>-->
+    <!--</div>-->
+</div>
+<script src="../assets/js/jquery/jquery-3.2.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 <script>
-    var d = document.querySelector('#particles-js');
-    d && particlesJS.load('particles-js', '/assets/js/particlesjs-config.json', function() {});
+  $(function () {
+    var stack = [];
+    var item = $('[data-animate-in]');
+    item.on('mouseover', function () {
+      let classIn = 'animate' + $(this).attr('data-animate-in');
+      let classOut = 'animate' + $(this).attr('data-animate-out');
+      $(this).removeClass(classOut).addClass(classIn);
+      setTimeout(() => {
+        $(this).removeClass(classIn).addClass(classOut);
+      }, 2000);
+    });
+    setInterval(function () {
+      $(item[getRandom()]).trigger('mouseover');
+    }, 1000);
+
+    function getRandom() {
+      let random = Math.floor(Math.random() * 7);
+      if (random !== stack[0] && random !== stack[1]) {
+        stack.push(random);
+        if (stack.length === 3) {
+          stack.shift();
+        }
+        return random;
+      }
+      getRandom();
+      gitComment();
+    }
+  });
+
 </script>
 </body>
 </html>

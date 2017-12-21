@@ -1,0 +1,268 @@
+---
+---
+
+$yelloColor: #ffc300;
+$whiteColor: #fffdf6;
+$blueColor: #00dbec;
+$blackColor: #605f5f;
+.pull-right {
+  float: right;
+}
+
+.inline {
+  display: inline-block;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+  -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  color: #2E2E2E;
+  margin: 1em 0;
+  font: 300 1em/1.8 "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
+}
+
+body {
+  background-color: $whiteColor;
+  font: 300 1em/1.8 "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans
+}
+
+.index {
+  header {
+    height: 61.8vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $yelloColor;
+    .letter-title {
+      display: flex;
+      justify-content: center;
+      > div {
+        width: 100px;
+        height: 169px;
+        transform: scaleX(0.8);
+      }
+      .letter-title-s {
+        background: url('../img/letter-title-S.png') no-repeat;
+        background-position-x: -100px;
+      }
+      .letter-title-a {
+        background: url('../img/letter-title-A.png') no-repeat;
+        background-position-x: -100px;
+      }
+      .letter-title-y {
+        background: url('../img/letter-title-Y.png') no-repeat;
+        background-position-y: -170px;
+      }
+      .letter-title-h {
+        margin-left: 5vw;
+        background: url('../img/letter-title-H.png') no-repeat;
+      }
+      .letter-title-e {
+        background: url('../img/letter-title-E.png') no-repeat;
+      }
+      .letter-title-l {
+        background: url('../img/letter-title-L.png') no-repeat;
+        background-position-y: -169px;
+      }
+      .letter-title-o {
+        background: url('../img/letter-title-O.png') no-repeat;
+        background-position-x: -100px;
+      }
+      .animateLtoR {
+        animation: animateLtoR 0.3s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+      }
+      .animateRtoL {
+        animation: animateRtoL 0.3s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+      }
+      .animateBtoT {
+        animation: animateBtoT 0.3s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+      }
+      .animateTtoB {
+        animation: animateTtoB 0.3s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+
+  @keyframes animateLtoR {
+    from {
+      background-position-x: 0;
+    }
+    to {
+      background-position-x: -100px;
+    }
+  }
+
+  @keyframes animateRtoL {
+    from {
+      background-position-x: -100px;
+    }
+    to {
+      background-position-x: 0;
+    }
+  }
+
+  @keyframes animateBtoT {
+    from {
+      background-position-y: 0;
+    }
+    to {
+      background-position-y: -170px;
+    }
+  }
+
+  @keyframes animateTtoB {
+    from {
+      background-position-y: -169px;
+    }
+    to {
+      background-position-y: 0;
+    }
+  }
+
+  .content {
+    width: 65%;
+    margin: 50px auto;
+    display: flex;
+    .post {
+      flex: 1;
+      ul {
+        list-style: none;
+        padding: 0;
+        li {
+          margin: 30px;
+          a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: #003236;
+            background-image: linear-gradient(#f2cd2c, #f2cd2c);
+            background-position: 0 1.2em;
+            background-size: 2px 2px;
+            background-repeat: repeat-x;
+            transition: all .2s ease-in-out;
+            &:hover {
+              background-image: linear-gradient(#00dbec, #00dbec);
+              background-size: 6px 6px;
+              -webkit-transition: all .1s ease-in-out;
+            }
+          }
+        }
+      }
+    }
+    .category {
+      flex: 2;
+      h2 {
+        font: 300 1em/1.8 "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
+        font-size: 1.625em;
+      }
+      a {
+        display: inline-block;
+        height: 24px;
+        padding: 0 10px;
+        line-height: 24px;
+        text-decoration: none;
+        background-color: #605f5f;
+        color: #fff;
+        box-shadow: 0 1px 2px 0 rgba(168, 182, 191, 0.6);
+        &:hover {
+          transform: translateY(-1px);
+        }
+      }
+    }
+  }
+}
+
+.post {
+  .content {
+    width: 65%;
+    margin: 0 auto;
+    h1 {
+      font-size: 2rem;
+    }
+    h4 {
+      font-size: 1.5rem;
+    }
+    blockquote {
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      margin: 1.75em 0 1.75em -2.2em;
+      padding: 0 0 0 1.75em;
+      font-style: italic;
+      border-left: $yelloColor 0.2em solid;
+      color: #885c3c;
+    }
+    .post-content {
+      a {
+        text-decoration: none;
+        font-size: 1.2rem;
+        color: #003236;
+        background-image: linear-gradient(#f2cd2c, #f2cd2c);
+        background-position: 0 1.2em;
+        background-size: 2px 2px;
+        background-repeat: repeat-x;
+        transition: all .2s ease-in-out;
+        &:hover {
+          background-image: linear-gradient(#00dbec, #00dbec);
+          background-size: 6px 6px;
+          -webkit-transition: all .1s ease-in-out;
+        }
+      }
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+        padding: 0.6em 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    width: 90% !important;
+  }
+  .header-title {
+    display: none !important;
+  }
+}
+
+.back-wrap {
+  display: inline-block;
+  margin: 40px;
+  font-size: 14px;
+  height: 30px;
+  overflow: hidden;
+  a {
+    display: inline-block;
+    outline: none;
+    padding: 1px 20px;
+    text-decoration: none;
+    border: 2px solid #fff;
+    font-weight: 500;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 30px;
+  }
+  .btn-back {
+    border-color: $yelloColor;
+    color: $yelloColor;
+    transition: background-color,color 0.5s;
+    &:hover {
+      background-color: $yelloColor;
+      color: #fff;
+    }
+  }
+}

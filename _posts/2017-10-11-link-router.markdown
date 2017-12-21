@@ -2,7 +2,7 @@
 layout: post
 title:  "写一个前端路由"
 date:   2017-10-11
-categories: 《router》
+category: JavaScript
 spend: 
 excerpt: ""
 ---

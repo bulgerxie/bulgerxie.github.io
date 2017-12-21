@@ -2,7 +2,7 @@
 layout: post
 title:  "出发去上海"
 date:   2015-07-19
-categories: 随笔
+category: 随笔
 excerpt: ""
 ---
 

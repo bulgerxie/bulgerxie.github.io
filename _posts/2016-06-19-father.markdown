@@ -2,7 +2,7 @@
 layout: post
 title:  "父亲节"
 date:   2016-06-19
-categories: 随笔
+category: 随笔
 excerpt: ""
 ---
 

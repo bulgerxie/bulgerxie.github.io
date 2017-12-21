@@ -2,8 +2,7 @@
 layout: post
 title:  "读《JavaScript高级程序设计》笔记"
 date:   2017-05-31
-categories:
-excerpt:  ""
+category: JavaScript
 ---
 
 #### 目录

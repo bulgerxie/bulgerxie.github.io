@@ -2,7 +2,7 @@
 layout: post
 title:  "山南水北多么美好"
 date:   2017-01-24
-categories: 随笔
+category: 随笔
 ---
 
 走走停停，山南水北多么美好。
