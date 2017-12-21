@@ -257,12 +257,11 @@ body {
     height: 30px;
   }
   .btn-back {
-    border-color: $yelloColor;
     color: $yelloColor;
-    transition: background-color,color 0.5s;
+    border-color: $yelloColor;
     &:hover {
-      background-color: $yelloColor;
-      color: #fff;
+      border-color: $blueColor;
+      color: $blueColor;
     }
   }
 }
