@@ -31,7 +31,7 @@ category: JavaScript
 23. <a href="#23">Day23 HTML5——File API<a/>
 
 <a id="1" href="javascript:void(0)"></a>
-### Day1 相等符(==)
+#### Day1 相等符(==)
 过去的某一天里，突然看到了一篇叫做[《如何通过饿了吗NodeJS面试》](https://github.com/ElemeFE/node-interview/tree/master/sections/zh-cn)的文章，里面提了几个关于js的基础问题，看后却没有一点头绪，我想确实该补一下知识了，那就打开犀牛书，每天记录一点吧!
 {% highlight javascript %}  
     //问题一:  
@@ -58,7 +58,7 @@ category: JavaScript
 
 
 <a id="2" href="javascript:void(0)"></a>
-### Day2 包装对象
+#### Day2 包装对象
 
   {% highlight javascript %}  
       //问题:  
@@ -77,7 +77,7 @@ category: JavaScript
 
 
 <a id="3" href="javascript:void(0)"></a>
-### Day3 从闭包来看作用域
+#### Day3 从闭包来看作用域
 
 js里的闭包，简单来说就是`在函数内部定义一个函数`
 {% highlight javascript %}  
@@ -118,7 +118,7 @@ js里的闭包，简单来说就是`在函数内部定义一个函数`
 这样也就可以从根本上来解释变量`n`依然保存在内存中的原因了。
 
 <a id="4" href="javascript:void(0)"></a>
-### Day4 参数传递是引用传递?不存在的
+#### Day4 参数传递是引用传递?不存在的
 
 照例先看个问题:  
 {% highlight javascript %}
@@ -167,18 +167,18 @@ alert(obj.name);
 从①例子里可见，基本数据类型的参数传递是属于值传递的。我们回到一开始的那个问题里:在没有重新定义obj之前，变量person和函数参数obj的值相等，都是对同一个对象的引用地址，执行第一个`obj.name = bulger`时，也会改变原对象的值，但在重新定义obj后，其引用的对象已经和person不同，所以后面设置的name属性，不会再对原对象有影响。即不满足函数参数引用传递机制的定义:`被调函数对形参做的任何操作都影响了主调函数中的实参变量`，因此得出结论:`js里的函数参数传递不存在引用传递，只有值传递`。
 
 <a id="5" href="javascript:void(0)"></a>
-### Day5 追寻js的本质、历史、局限性
+#### Day5 追寻js的本质、历史、局限性
 
-#### 一、JavaScript简史  
+##### 一、JavaScript简史
 在Web刚兴起的时候，网速普遍都是28.8kbit/s，所以出现这么一个场景，“用户填写完一个表单，点击提交按钮，30秒过后服务器返回消息说有一个必填字段没有填写”。  
 
 为了解决在客户端实现简单验证的问题，Netscape公司的Brendan Eich在1995年开发了出了LiveScript，发布前夕，为了搭上媒体炒热Java顺风车，临时改名为JavaScript。  
 
 由于JavaScript发布后获得了巨大的成功，其它浏览器开发商也都做出了能在自己浏览器上运行的JavaScript版本，当时还没有标准规定JavaScript的语法和特性，所以在1997年的时候，出台了一个叫做ECMAScript的新脚本语言的标准。
 
-#### 二、JavaScript的实现
+##### 二、JavaScript的实现
 JavaScript由以下三部分组成。
-##### 1.ECMAScript
+###### 1.ECMAScript
 ECMAScript和Web浏览器没有任何依赖。它只是定义了一些基础，在此基础之上可以构建完善的脚本语言。常见的Web浏览器只是实现ECMAScript的宿主环境之一，类似的还有Node和Adobe flash。宿主环境不仅提供了基本的ECMAScript实现，还会提供该语言的拓展，如浏览器的DOM，Node的I/O。  
 `ps:按照标准实现宿主环境这种形式，让我想起了《黑客与画家》里提及的Lisp语言，约翰·麦卡锡一开始并不是想把Lisp设计成编程语言，是他的学生拉塞尔实现的Lisp解释器。但Lisp包含一些思想今天我们早已习以为常，比如条件结构(if-then-else)、递归、垃圾回收机制，那是1958年提出的呀我的老爷`  
 ECMAScript的重要版本:  
@@ -187,15 +187,15 @@ ECMAScript的重要版本:
 * `ECMAScript 5: 新增JSON对象、严格模式`  
 
 IE的兼容虽然备受诟病，但却是第一个实现ECMAScript5的主流浏览器...  
-##### 2.DOM(文档对象模型)
+###### 2.DOM(文档对象模型)
 DOM是针对XML经过拓展后用于HTML应用程序的编程接口。DOM使得整个HTML页面中的每个组成部分都是某种类型的节点，借助DOM提供的API，开发人员可以删除、添加、修改这些节点(虽然现在的开发模式已经不是直接操作DOM了，不过还是怀念那种直来直去的感觉，说爱你就跟我走)。  
 
 扯皮的是，起初Netscope和微软对DOM实现在各自浏览器上的情况又是互不兼容，所以w3c就跳出来规划了一个DOM标准。
 
-##### 3.BOM(浏览器对象模型)
+###### 3.BOM(浏览器对象模型)
 所有对于浏览器JavaScript的拓展都可以算作是BOM的一部分，为什么这么笼统?因为在HTML5之前依然没有一个BOM的标准被提出来，导致很多浏览器都有自己的实现。HTMl5致力于把很多BOM功能纳入规范，这个我们后续再说。
 
-#### 三、小结
+##### 三、小结
 作为一种专为网页交互而设计的脚本语言，JavaScript由以下三个部分组成:
 * `ECMAScript`
 * `DOM(文档对象模型)`
@@ -204,33 +204,33 @@ DOM是针对XML经过拓展后用于HTML应用程序的编程接口。DOM使得�
 这三者在目前的五个主流浏览器(IE、Chrome、Firefox、Safari和Opera)中得到不同程度的支持，`ECMAScript3`基本支持，`ECMAScript5`还有部分未支持;对DOM结构彼此相差还是很大;BOM尽管在各个浏览器都实现了某些众所周知的功能，如window对象、navigator对象，其他特性还是会因浏览器各异。
 
 <a id="6" href="javascript:void(0)"></a>
-### Day6 散落在缝隙里的基本概念
+#### Day6 散落在缝隙里的基本概念
 
 大概算了一下，今天看js的基本核心概念花了5个小时左右，这些概念实现了ECMAScript的标准，可以说是很枯燥了，讲数据类型，讲语句，讲函数，10点的时候还看瞌睡了，赶紧打开音乐听逼哥吼两嗓子。幸好能拾得以下这些遗漏的点，才算这波不亏。果然，新鲜感才是让我活下去的动力。
-#### 1、typeof、undefined、null
+##### 1、typeof、undefined、null
 * `typeof 是唯一一个可以用于未声明变量而不报错的操作符(虽然delete也可以，但是没有任何意义，且在严格模式下会报错)`
 * `typeof null   //结果是object。因此null也经常被作为一个对象占位符，表示这个变量将来会用于保存对象。`
 * `undefined == null    //true。undefined派生自null，因此ECMAScript规定它们的相等性测试要返回true。`
 
-#### 2、数值类型
-##### ① 浮点数值
+##### 2、数值类型
+###### ① 浮点数值
 {% highlight javascript %}  
     0.1 + 0.2 == 0.3    //false
 {% endhighlight %}
 真实结果是`0.30000000000000004`，这个问题出在JavaScript的数值类型采用的是IEEE 754 64位双精度浮点数编码上，有时间再去研究。避免方法就是不要测试某个特定的浮点数值。  
-##### ② 数值范围
+###### ② 数值范围
 由于内存的限制，JavaScript也只能保存一定范围内的值，使用`Number.MIN_VALUE`可以拿到最小值，`Number.MAX_VALUE`拿到最大值。`isFinite()`函数可以判断一个数是否在范围之间。
  {% highlight javascript %}  
      var result = Number.MAX_VALUE + Number.MAX_VALUE;
      alert(isFinite(result));   //false
  {% endhighlight %}  
-#### 3、逗号操作符
+##### 3、逗号操作符
 用于在一行语句中执行多个操作
 {% highlight javascript %}  
     var num = (1, 5, 2, 7, 3);
     alert(num);    //num = 3;
 {% endhighlight %}
-#### 4、label语句
+##### 4、label语句
 使用label语句添加给标签，配合循环语句用，实例:
 {% highlight javascript %}  
     var num = 0;
@@ -246,7 +246,7 @@ DOM是针对XML经过拓展后用于HTML应用程序的编程接口。DOM使得�
     alert(num);     //55
 {% endhighlight %}
 因为`break`语句不仅退出了当前循环，直接退出了设置标签为outermost的这层循环。  
-#### 5、函数参数
+##### 5、函数参数
 都知道函数的参数可以用`arguments`对象来获取。有意思的是，`arguments`会永远和对应命名参数的值保持一致，且这种流动是双向的。实例:
 {% highlight javascript %}  
     function doAdd1(num) {
@@ -266,9 +266,9 @@ DOM是针对XML经过拓展后用于HTML应用程序的编程接口。DOM使得�
 还有一些如`with`语句这样的不常用的且在大型应用并不适用的就不细说了。明天接着作用域、内存管理，应该会好玩多。
 
 <a id="7" href="javascript:void(0)"></a>
-### Day7 作用域、内存问题
+#### Day7 作用域、内存问题
 
-#### 一、执行环境和作用域链
+##### 一、执行环境和作用域链
 
 执行环境定义了函数或变量能有权访问的其他数据，全局环境是最外围的一个环境，且每一个函数都有一个执行环境，而每一个执行环境，都有一个与之对应的对象变量保存这些数据，供解析器使用。当执行流从最外围进入到一个函数的时候，函数的环境被推入一个环境栈中，执行完后弹出该栈，控制权继续返回之前运行的环境。
 
@@ -276,7 +276,7 @@ DOM是针对XML经过拓展后用于HTML应用程序的编程接口。DOM使得�
 
 标识符(变量)的解析就是沿着作用域链一级一级的向上搜索的过程。从最前端开始，逐级查找，找到就会停止，所以`局部变量会覆盖全局的同名变量`、`访问局部变量比访问全局变量快`。如果连全局环境都找不到，则意味着该变量未申明。
 
-#### 二、垃圾回收
+##### 二、垃圾回收
 JavaScript会周期性的监测出执行环境中不再使用的内存，然后释放掉。浏览器中具体有两种实现。  
 1.引用计数  
 含义就是记录每一个值被引用的次数。把一个引用类型值或是基本类型值赋给一个变量，该值的引用次数加1，包含对该引用的变量又取到了另外一个值，则这个值引用次数减1。引用次数为0是，就会在下一次垃圾回收器运行时，释放那个值所占的内存。  
@@ -298,17 +298,17 @@ JavaScript会周期性的监测出执行环境中不再使用的内存，然后�
 
 现代浏览器基本都使用标记清除的方式来做垃圾回收，但这样也不是完美的。标记清除的后的内存空间是不连续的，后来又出现了基于标记清除的改进版，标记-整理方法，该方法会在做标记的时候把`活着`的内存尽量移动到一边，清除时再释放边界部分，不过这样的效率没有标记清除高，反正浏览器给什么就用什么吧~
 
-#### 三、管理内存
+##### 三、管理内存
 为了避免运行JavaScript的网页导致系统崩溃，所以分配给Web浏览器的内存有限。因此，优化内存可以让页面获得更好的性能。
 * 解除引用:手动清除不再使用的全局对象、全局对象属性及循环引用变量的引用
 * 不需要`interval`或者`timeout`时，最好调用`clearInterval`或者`clearTimeout`
 * 避免创建对象，类似于`var obj = {};`，可以在使用到的时候再直接赋值。使用`array.length = 0`清空数组
 
 <a id="8" href="javascript:void(0)"></a>
-### Day8 探路引用类型
+#### Day8 探路引用类型
 
-#### 一、数组
-##### 1、位置方法
+##### 一、数组
+###### 1、位置方法
 indexOf和lastIndexOf是通过全等于(`===`)来查找匹配的
 {% highlight javascript %}  
     var person = { name: 'Tom' };
@@ -319,13 +319,13 @@ indexOf和lastIndexOf是通过全等于(`===`)来查找匹配的
     alert(morePeople.indexOf(person));  //0    
 {% endhighlight %}
 且lastIndexOf是从末尾开始。
-##### 2.迭代方法
+###### 2.迭代方法
 * every():对数组中的每一项运行给定函数，如果该函数每一项都返回true，那就返回true
 * some():对数组中的每一项运行给定函数，如果该函数至少有一项返回true，那就返回true
 * filter():对数组中的每一项运行给定函数，返回该函数会返回true的项组成数组  
 
 用来用去都是map和forEach，还有这几个好用的方法，留意下。
-#### 二、有趣的Date对象
+##### 二、有趣的Date对象
 提到`Date`对象就是一大堆的方法，前端和它常打交道的场景通常是做日期范围查询传递数据给后端。恰好刚才发现了一个有趣的地方。
 
 使用`Date.parse()`方法可以把一个表示日期的字符串转换为相应的毫秒数，如:
@@ -338,10 +338,10 @@ indexOf和lastIndexOf是通过全等于(`===`)来查找匹配的
 {% endhighlight %}
 可以看到，前三种使用非`yyyy-mm-dd`格式的字符串，得到的返回值比使用`yyyy-mm-dd`格式得到的时间值少了8小时，格林威治作为世界时间，比中国的本地时间慢了8小时，因此我推测`yyyy-mm-dd`格式的字符串通过`Date.parse()`得到的是中国时间，否则就是世界时间。在真实的使用场景中，只要保证两端取同一个时区的时间来计算，也就不会出现误差了。
 
-#### 三、正则表达式-IE9以下的问题
+##### 三、正则表达式-IE9以下的问题
 使用字面量`/example/g`定义的正则表达式始终会共享一个实例，循环使用时可能会与预期出现误差，需注意。
 
-#### 四、arguments的属性-callee
+##### 四、arguments的属性-callee
 `callee`是对象`arguments`对象的一个属性，保存了拥有这个`arguments`的函数。
 
 `callee`有一个属性`callee.caller`，保存着调用当前函数的函数引用，如果是在全局作用域中调用该函数，该值为`null`。
@@ -360,14 +360,14 @@ apply()和call()，它们都是都是用来改变函数体内的`this`值，区�
 * Array.prototype.push.apply(`arr1`， `arr2`);  //合并`arr1、arr2`数组
 
 <a id="9" href="javascript:void(0)"></a>
-### Day9 引用类型完结篇
+#### Day9 引用类型完结篇
 
 如果标题取名以“你不知道”开头的话，那可能会写出30+篇出来。一开始我是通过W3C的中文手册来学习的，现在也常用它来当做手册查询。所以，我是拿了一个速查的手册在学习，并没有深入的理解，结果现在在书里看到的除了基础讲解，甚至连一些语言内置提供的方法也觉得新鲜。所以下次再学习新语言的时候还是直接看书实在点，否则早晚是要补回来的。  
 
 现在对于做记录也有了一点个人的想法。
 
 以前老师告诉我们"理解一个东西，你需要把它转化成自己的语言表述出来"，有模有样的学习背后，连做记录都是用自己的语言了，可是呀，写作者的语言凝练水平，不知道比我们高到哪里去，因此，概念性的解释，还是用作者的原句比较好。
-#### 一、基本包装类型
+##### 一、基本包装类型
 前面写过一点[包装类型的常用实践](https://bulgerxie.github.io/%E6%88%91%E5%8F%AF%E8%83%BD%E4%B8%8D%E4%BC%9Ajavascript/2017/06/01/Notjs-day2.html)，这里就不多说了。现在记录一些内置提供的方法。
 * Number类型提供了`toFixed()`，该方法会返回指定小数位的数值字符串，接收一个指定位数的参数:
 {% highlight javascript %}  
@@ -395,16 +395,16 @@ apply()和call()，它们都是都是用来改变函数体内的`this`值，区�
     //&lt;span class=&quot;color&quot;&gt;hello&lt;/span&gt;
 {% endhighlight %}
 如果以函数作为第二个参数，该函数可以传入三个参数，分别为匹配项、匹配项在字符串中的位置和原始字符串。
-#### 二、单体内置对象
+##### 二、单体内置对象
 引用书中对单体内置对象的定义:
 > 由ECMAScript实现提供、不依赖于宿主环境的对象，这些对象在ECMAScript程序执行之前就存在了。
 
 它实现了两个单体内置对象:Global个Math。
-##### 1.Global
+###### 1.Global
 这个对象被认为是一个`兜底对象`，因为所有在全局作用域中定义的函数和方法，都是Global对象的属性，在浏览器中挂载到`window`对象上。诸如`Infinity`属性和`isNan()`、`parseInt()`方法。  
 
 值得一提的是，在使用全局方法eval()来执行JavaScript代码时，它所定义的内部变量不会出现变量提升。
-##### 2.Math
+###### 2.Math
 至于Math对象，提供了很多辅助方法用于完成数学计算，记熟就行。  
 
 看到一个实践不错:
@@ -419,9 +419,9 @@ apply()和call()，它们都是都是用来改变函数体内的`this`值，区�
 像这样做记录的代码，不是不能把它定义成自己的代码风格，但我没法比它做到更具语义化的定义，copy就好。
 
 <a id="10" href="javascript:void(0)"></a>
-### Day10 面向对象的程序设计
+#### Day10 面向对象的程序设计
 
-#### 一、访问器属性getter和setter
+##### 一、访问器属性getter和setter
 这个属性第一次相见时，并没有意识到有多大的用处，认为只是语言的一些内部实现方法，殊不知到今天，各种流行的MVVM框架都是依赖于它做数据绑定。  
 
 对象的属性在创建时，都会带有一些特征值，数据属性和访问器属性，今天主要记录访问器属性`getter`和`setter`。
@@ -450,25 +450,25 @@ Object.defineProperty(book, "year", {
 book.year = 2005;
 alert(book.edition);    //2
 {% endhighlight %}
-#### 二、继承
+##### 二、继承
 对于这个主题，我看过不止4遍了，真正让我觉得通透的是返校拿毕业证那会儿，在图书馆里看到了一本薄薄的《Javascript面向对象精粹》，花了两天看完，深入简出，很是喜欢，后来还买了一本送朋友。
-##### 1.构造函数继承
+###### 1.构造函数继承
 使用call或apply在子类的构造函数中执行一遍父类的构造函数，并改变this指向为子类。缺点是每实例一个对象都会执行一遍父类的构造函数。
-##### 2.prototype模式
+###### 2.prototype模式
 把子类的prototype属性指向父类的实例，切记要修改constructor的指向。缺点是每次都要实例化一下父类，占用内存。
-##### 3.直接继承prototype
+###### 3.直接继承prototype
 把子类的prototype属性指向父类的prototype属性，同样要修改constructor属性的指向，缺点是子类的prototype修改会影响到父类的prototype。
-##### 4.利用空对象作为媒介
+###### 4.利用空对象作为媒介
 使用一个空对象的prototype指向父类的prototype，然后再用子类的prototype指向空对象的prototype，这样就避免了第3中方式的缺点。
-##### 5.拷贝继承
+###### 5.拷贝继承
 把父类的prototype上的属性和方法拷贝到子类的prototype。
 
 非构造函数的继承有object()方法、浅拷贝和深拷贝
 
 <a id="11" href="javascript:void(0)"></a>
-### Day11 函数作用域
+#### Day11 函数作用域
 
-#### 一、闭包中的内存泄漏
+##### 一、闭包中的内存泄漏
 由于闭包会引用包含函数的整个活动对象，导致在以引用计数作为垃圾回收策略的浏览器上出现内存泄漏问题，类似下面这样:
 {% highlight javascript %}
     function assignHandler() {
@@ -479,7 +479,7 @@ alert(book.edition);    //2
     }
 {% endhighlight%}
 闭包内引用了`element`，所以在函数执行完后element还是会继续保存在内存中，即使闭包没有直接引用到`element`，也会使得`element`元素不会被回收，因为包含闭包的`assignHandler`活动对象已经在闭包的作用域链上了。
-#### 二、递归函数
+##### 二、递归函数
 在递归函数中，要始终使用arguments.callee来递归地调用自身，不要使用函数名，因为函数名可能会发生变化。
 {% highlight javascript %}
     function factorial(num) {
@@ -490,21 +490,21 @@ alert(book.edition);    //2
         }
     }
 {% endhighlight%}
-#### 三、用函数作用域实现模块模式
+##### 三、用函数作用域实现模块模式
 [《JS中常用的4种设计模式》](https://bulger-model.herokuapp.com/#/overview)
 
 <a id="12" href="javascript:void(0)"></a>
-### Day12 BOM和客户端检测
+#### Day12 BOM和客户端检测
 
-#### 一、BOM
-##### 1.window对象—间隙调用和超时调用
+##### 一、BOM
+###### 1.window对象—间隙调用和超时调用
 第一个参数尽量别使用字符串，可能会导致性能损失。改用:
 {% highlight javascript %}
     setTimeout(function() {
         alert(1);
     },1000);
 {% endhighlight %}
-##### 2.location对象—位置函数
+###### 2.location对象—位置函数
 * location.assign()
 * window.location()
 * location.href()
@@ -512,9 +512,9 @@ alert(book.edition);    //2
 * location.reload()     //重新加载，如果页面自上次请求过后没有改变过，即从缓存加载，否则重新加载
 * location.reload(true)     //强制重新加载  
 
-##### 3.history对象
+###### 3.history对象
 可以使用`location.back()`和`location.forward()`代替`location.go()`来实现页面的前进和后退，更具语义化一点。  
-#### 二、客户端检测
+##### 二、客户端检测
 * 能力检测:检查特定浏览器的能力。例如，在调用某个函数之前，检测该函数是否存在
 * 怪癖检测:检测浏览器是否有bug。
 * 用户代理检测:通过检查用户代理字符串来识别浏览器。
@@ -524,41 +524,41 @@ alert(book.edition);    //2
 现在我们可以使用Modernizr.js来对浏览器所支持特性的做检测，根据检测出的结果来做相应的hack。
 
 <a id="13" href="javascript:void(0)"></a>
-### Day13 DOM
+#### Day13 DOM
 
-#### 一、DOM
-##### 1.document
+##### 一、DOM
+###### 1.document
 * `document.URL`  返回当前的url
 * `document.domain`  返回当前的域名
 * `document.referrer`  返回当前页面的来源页url，没有则返回null
 
-##### 2.为什么说DOM操作是"昂贵"的?
+###### 2.为什么说DOM操作是"昂贵"的?
 原来，nodeList对象保存的节点，它并不是一个已经加载好了的DOM结构快照，它是动态的，会随着DOM结构的变化而变化。因此，每次访问nodeList对象，都会运行一次查询。
 
-#### 二、DOM拓展
-##### 1.classList属性
+##### 二、DOM拓展
+###### 1.classList属性
 操作类名时可以使用(IE10及其它现代浏览器支持)
 * `document.classList.add(value)`  将给定字符串添加到列表中
 * `document.classList.contains(value)`  判断给定字符串是否处于列表中，有则返回true
 * `document.classList.remove(value)`  从列表中删除给定字符串
 * `document.classList.toggle(value)`  如果列表中存在值，删除;如果没有，就添加  
 
-##### 2.焦点管理
+###### 2.焦点管理
 * `document.activeElement`  返回DOM中当前获取了焦点的元素  
 * `document.hasFocus`  检测文档是否获得了焦点
 
-##### 3.插入标记
+###### 3.插入标记
 * `innerHTML`写入`<script>`的话不会执行
 * 在插入大量HTML标记是，使用`innerHTML`比手动创建节点效率高得多，因为在设置`innerHTML`时，就会创建一个HTML解析器，这个解析器是在浏览器级别的代码上运行的，比执行JavaScript快得多。
 
-##### 4.scrollIntoView
+###### 4.scrollIntoView
 通过滚动条滚动，让当前元素出现在视图中。
 
 <a id="14" href="javascript:void(0)"></a>
-### Day14 事件(一)
+#### Day14 事件(一)
 
-#### 一、事件处理程序
-##### 1.DOM2级事件处理程序
+##### 一、事件处理程序
+###### 1.DOM2级事件处理程序
 DOM0级的事件处理方式，就是将一个函数赋值给事件处理程序属性，像这样:
 {% highlight javascript %}
     var btn = document.getElementById('btn');
@@ -588,7 +588,7 @@ DOM0级的事件处理方式，就是将一个函数赋值给事件处理程序�
 
 值得一提的是，使用`removeEventListener`方法时，必须传入和`addEventListener`一样的参数才能移除处理函数，因此，如果处理函数是一个匿名函数的话，是没有办法被移除的。
 
-##### 2.IE的事件处理程序
+###### 2.IE的事件处理程序
 IE9以下的浏览器只支持事件冒泡，且不支持DOM2级方法，因此，绑定事件需要使用`attachEvent`和`detachEvent`方法。它们接收要处理的事件名和处理函数两个参数。
 
 使用`attachEvent`和DOM0级方法的主要区别在于事件处理程序的作用域。使用DOM0级方法时，事件处理程序在所属元素的作用域内运行;而在使用`attachEvent`时，事件处理程序会在全局作用域运行。所以`this`等于`window`。
@@ -602,8 +602,8 @@ IE9以下的浏览器只支持事件冒泡，且不支持DOM2级方法，因此�
 `attachEvent`也可以给元素绑定多个事件，但执行它们的先后顺序跟`addEventListener`添加的相反，最后添加的，最先执行。
 
 `detachEvent`的使用和`removeEventListener`一样，也是需要传入和`attachEvent`一样的参数，这也意味着添加的匿名函数处理程序不能被移除。
-#### 二、事件里的盲区
-##### 1.Image对象
+##### 二、事件里的盲区
+###### 1.Image对象
 对于页面的图像元素来说，并不是图片被加载到文档中才开始下载，而是在设置了它的`src`属性后就开始下载。这点与`script`、`link`标签不同，需要设置引用路径和加载到文档后才会下载，如:
 {% highlight javascript %}
     var img = new Image();
@@ -612,31 +612,31 @@ IE9以下的浏览器只支持事件冒泡，且不支持DOM2级方法，因此�
 Image对象在DOM0级里就得到了实现，我们可以使用它来预加载资源。
 
 <a id="15" href="javascript:void(0)"></a>
-### Day15 事件(二)
+#### Day15 事件(二)
 
-##### 2.textInput事件
+###### 2.textInput事件
 DOM3级里新增了一个`textInput`事件用于替代`keypress`，但它们的事件行为稍有不同。
 
 * 区别一:任何可以获取焦点的元素都可以触发`keypress`事件，但只有在编辑区才可以触发`textInput`事件
 * 区别二:`textInput`事件只有在用户按下能够输入实际字符的键时才会触发，而`keypress`事件则在那些按下可以影响文本显示的键时也会触发(如退格键)。
 
-##### 3.contextmenu事件
+###### 3.contextmenu事件
 用于创建自定义的右键菜单。
-##### 4.hashchange事件
+###### 4.hashchange事件
 监听URL的变化。
-#### 三、事件的性能和内存
-##### 1.多事件绑定时，使用事件托管
+##### 三、事件的性能和内存
+###### 1.多事件绑定时，使用事件托管
 合理的使用建立在事件冒泡基础上的事件托管技术，可以有效地减少事件处理程序的数量。
-##### 2.移除已绑定事件的元素
+###### 2.移除已绑定事件的元素
 移除已绑定事件的元素时，可能会导致该元素没法被垃圾回收机制处理掉，正确的做法是，在明确知道某一个已绑定事件的元素将被移除时，首先把该事件解绑掉，保证这快内存被回收后还能再次利用。
 
 这也体现出事件托管的优势，如果事件是通过绑定到上层元素的，那么及时该元素被移除掉，也不会产生因绑定了事件而无法移除的情况。
 
 <a id="16" href="javascript:void(0)"></a>
-### Day16 表单
+#### Day16 表单
 
-#### 一、提交表单
-##### 1.submit事件
+##### 一、提交表单
+###### 1.submit事件
 在单击表单中的提交按钮后，浏览器会先触发表单的`submit`事件，然后才会将数据提交给服务器，因此，如果要做一些数据验证，就可以放到`submit`事件中去，如果得到不符合预期的数据，阻止事件的默认行为就可以取消表单提交。
 
 值得注意的是，如果是手动提交表单的话，将不会触发submit事件。如:
@@ -645,11 +645,11 @@ DOM3级里新增了一个`textInput`事件用于替代`keypress`，但它们的�
     form.submit();
 {% endhighlight %}
 这样将不会触发`submit`事件，所以要把数据验证写在提交之前。
-##### 2.reset事件
+###### 2.reset事件
 手动调用`reset()`方法，依然会触发`reset`事件
 
 <a id="17" href="javascript:void(0)"></a>
-### Day17 错误处理
+#### Day17 错误处理
 
 ##### 1.try-catch语句
 {% highlight javascript %}
@@ -705,7 +705,7 @@ DOM3级里新增了一个`textInput`事件用于替代`keypress`，但它们的�
 {% endhighlight %}
 
 <a id="18" href="javascript:void(0)"></a>
-### Day18 JSON
+#### Day18 JSON
 
 ##### 1.语法
 JSON作为一种数据格式，有以下三种类型的值:
@@ -809,10 +809,10 @@ JSON对象有两个方法:
 同过滤器函数一样，传入一个键和一个值，而且都需要返回一个值。如果返回了`undefined`，则表明结果中要删除这个键;返回其它值，就将该值插入到结果中。
 
 <a id="19" href="javascript:void(0)"></a>
-### Day19 AJAX(一)
+#### Day19 AJAX(一)
 
-#### 一、XMLHttpRequest对象
-##### 1.XHR的用法
+##### 一、XMLHttpRequest对象
+###### 1.XHR的用法
 {% highlight javascript %}
     var xhr = new XMLHttpRequest();     //IE7+才支持这个对象
     xhr.onreadystatechange = function() {
@@ -833,7 +833,7 @@ JSON对象有两个方法:
 
 还可以使用`xhr.abort()`来取消异步请求，调用这个方法后，xhr对象会停止触发事件，也就是说xhr.onreadystatechange事件不会再触发，xhr对象的任何与响应有关的属性也不能再访问。  
 
-##### 2.HTTP头部信息
+###### 2.HTTP头部信息
 在发送HTTP请求时，还会发送以下头部信息:
 * Accept: 浏览器能够处理的内容类型
 * Accept-Charset: 浏览器能够显示的字符集
@@ -849,14 +849,14 @@ JSON对象有两个方法:
 
 也可以使用`getResponseHeader()`传入头部字段名称，取得相应的响应头部信息;使用`getAllResponseHeaders()`取得所有头部信息。
 
-#### 二、FormData对象
+##### 二、FormData对象
 由于服务器对POST请求和提交表单的请求并不会一视同仁，所以服务器必须要有能从发送过来的原始解析出有用的部分，但我们也可以使用XHR对象来模仿表单提交。  
 
 我们需要改变把`Content-type`头信息改为:`appliation/x-www-form-urlencodeed`。  
 
 而现在，我们只需要在新建的`FormData`对象实例上，使用`append()`把键和值作为它的两个参数传进去，就可以把该实例放到`send()`方法中进行传递了，XHR对象在检测到`FormData`对象后，会自动执行头信息处理。
 
-#### 三、进度事件
+##### 三、进度事件
 可以使用xhr对象的`progress`事件来监听浏览器接收新数据的进度，它会周期性的触发。  
 `onprogress`事件处理程序会接收一个event对象，对象包含很多属性，我们主要使用其中的三个属性:
 * lengthComputable: 进度信息是否可用
@@ -864,22 +864,22 @@ JSON对象有两个方法:
 * total: 根据Content-Length响应头确定预期字节数
 
 <a id="20" href="javascript:void(0)"></a>
-### Day20 AJAX(二)
+#### Day20 AJAX(二)
 
-#### 一、跨域技术
-##### 1.图片Ping
+##### 一、跨域技术
+###### 1.图片Ping
 动态的创建图像Ping，使用它们的`onload`和`onerror`事件处理程序来确定是否接收到了响应。该方法的特点是:
 * 简单(通过查询字符串的形式发送数据)
 * 单向(只能发GET请求，不能处理服务器响应)
 请求从给`Image`对象设置src属性的那一刻开始发送，常用于跟踪用户点击，做数据埋点。
 
-##### 2.JSONP
+###### 2.JSONP
 它同图片Ping技术一样，也是利用`script`标签不受其它域加载资源限制的特点来完成的，但是`script`的特点在于加载到的脚本会被浏览器执行，所以它是双向的，可以事先定义好一个函数，在返回响应里调用该函数，将需要处理的数据使用JSON格式作为函数参数调用，这就是JSONP的原理。  
 
 缺点也很明显，由于是加载其它域的代码来执行，再不能保证所加载代码的安全性时，应用也就处于危险中。
 
 <a id="21" href="javascript:void(0)"></a>
-### Day21 高级技巧
+#### Day21 高级技巧
 
 ##### 1.作用域安全的构造函数
 {% highlight javascript %}
@@ -937,15 +937,15 @@ JSON对象有两个方法:
 {% endhighlight %}
 
 <a id="22" href="javascript:void(0)"></a>
-### Day22 最佳实践-可维护性
+#### Day22 最佳实践-可维护性
 
-#### 一、可维护性
+##### 一、可维护性
 可维护性的代码需要遵循以下几点:
 * `直观性`: 让代码简单易懂
 * `可拓展性`: 代码架构上容易对核心应用进行拓展
 * `可调试性`: 出错时，代码能提供足够的信息方便排查问题
 
-##### 1.可读性
+###### 1.可读性
 * 命名:变量名使用名词，函数名使用动词开头，如`getName()`。返回布尔类型值的以`isDisable()`开头。
 * 变量初始化: 初始该值时就表明这个变量未来将用于存储哪一个类型的值。如下:
 {% highlight javascript %}
@@ -955,10 +955,10 @@ JSON对象有两个方法:
     var person = null;  //Object
 {% endhighlight %}
 
-##### 2.解耦CSS/JavaScript
+###### 2.解耦CSS/JavaScript
 避免直接在JavaScript修改元素的样式，而是通过修改对应CSS的类名来达到目的。  
 
-##### 3.解耦应用逻辑/事件处理程序
+###### 3.解耦应用逻辑/事件处理程序
 把事件处理程序中包含的应用逻辑分离出来，便于维护。示例:
 {% highlight javascript %}
     function handleKeyPress(event) {
@@ -988,14 +988,14 @@ JSON对象有两个方法:
     }
 {% endhighlight %}
 
-##### 4.优化循环
+###### 4.优化循环
 * 减值迭代
 * 简化终止条件: 使用减值迭代后，终止条件的算法复杂度为O(1)
 * 简化循环体
 * 使用后测试循环: do-while语句
 
 <a id="23" href="javascript:void(0)"></a>
-### Day23 HTML5——File API
+#### Day23 HTML5——File API
 
 HTML5中提供了一些API，让浏览器也可以访问本地文件。各浏览器的支持情况如下：
 ![File API的浏览器支持](http://navcd-1252873427.file.myqcloud.com/head_img/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-06-28%20%E4%B8%8B%E5%8D%885.25.57.png)

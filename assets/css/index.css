@@ -142,7 +142,7 @@ body {
     color: #999; }
 .post .content .post-content a {
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 16px;
     color: #f66;
     font-family: "Roboto", "Helvetica Neue", "Hiragino Sans GB", "LiHei Pro", Arial, serif;
     border-bottom: 2px solid transparent;
@@ -208,5 +208,11 @@ h4:before {
     top: 12%; }
 
 h5 {
-    color: #22ab28;
+     color: #22ab28;
+    font-size: 18px;
+ }
+
+h6 {
+    color: #ffc300;
+    font-size: 16px;
 }
