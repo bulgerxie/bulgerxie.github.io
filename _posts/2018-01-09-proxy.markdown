@@ -63,7 +63,7 @@ excerpt: ""
 
 这里我使用了工具[whistle](https://github.com/avwo/whistle)，它的优势在于跨平台和功能强大。
 
-##### 使用whistle
+##### 1.使用whistle
 {% highlight bash %}
    安装
     > npm install -g whistle
@@ -75,7 +75,7 @@ excerpt: ""
     > w2 stop
 {% endhighlight %}
 
-##### 配置代理
+##### 2.配置代理
 安装浏览器代理插件[whistle-for-chrome](https://chrome.google.com/webstore/category/extensions)
 
 打开插件，点击`create`新建一个`test`分组，然后配置`hosts`如下：
