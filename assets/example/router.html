@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>亚洲</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #b4f3b3;
+            color: #ea5d3f;
+        }
+
+        .content {
+            height: 90vh;
+            font-size: 50px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            border-top: 1px solid #ea5d3f;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .menus li {
+            flex: 1;
+            text-align: center;
+            height: 50px;
+            box-sizing: content-box;
+        }
+
+        .menus li:not(:last-child) {
+            border-right: 1px solid #ea5d3f;
+        }
+
+        a {
+            display: block;
+            color: #ea5d3f;
+            text-decoration: none;
+            line-height: 50px;
+        }
+
+        .active {
+            background-color: #ea5d3f;
+            color: #fff;
+            cursor: default;
+        }
+
+        .content {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div>
+        <ul class="content"></ul>
+    </div>
+    <div class="footer">
+        <ul class="menus">
+            <li><a href="?area=asia">亚洲</a></li>
+            <li><a href="?area=europe">欧洲</a></li>
+            <li><a href="?area=africa">非洲</a></li>
+        </ul>
+    </div>
+</div>
+<script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script>
+    let flag = 0;
+    let $a = $('a').on('click', function (event) {
+        let value = $(this).attr('href');
+        let title = $(this).text();
+        document.title = title;
+        if (flag === 0) {
+            if (location.href.indexOf('?area') > -1) {
+                history.pushState({value: value, title: title}, title, location.href.split('?')[0] + value);
+            } else {
+                history.replaceState(null, document.title, location.href + '?area=asia');
+            }
+        }
+        // 接口需另外实现
+        $.ajax({
+            url: '/api' + value,
+            success: function (res) {
+                $('.content').html(res);
+            },
+            error: function () {
+                alert('出了点问题');
+            }
+        });
+        $('a').removeClass('active');
+        $(this).addClass('active');
+        flag = 0;
+        return false;
+    });
+    if (location.href.indexOf('?area') === -1) {
+        $('li:first-child a').click();
+    } else {
+        $a.each(function () {
+            if ($(this).attr('href') === ('?' + location.href.split('?')[1])) {
+                $(this).click();
+            }
+        })
+    }
+
+    window.addEventListener("popstate", function () {
+        $a.each(function () {
+            if ($(this).attr('href') === ('?' + location.href.split('?')[1])) {
+                flag = 1;
+                $(this).click();
+            }
+        })
+    });
+</script>
+</body>
+</html>
