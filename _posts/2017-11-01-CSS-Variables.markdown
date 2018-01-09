@@ -17,7 +17,7 @@ CSS变量，也叫做CSS自定义属性。他们可用于减少CSS中的重复�
 #### 自定义属性
 
 我们来看一个简单的示例:
-{% highlight html %}
+{% highlight css %}
     :root {
       --mainColor: #ccc;
     }
@@ -32,11 +32,11 @@ CSS变量，也叫做CSS自定义属性。他们可用于减少CSS中的重复�
 #### 语法
 
 自定义属性的语法很简单:
-{% highlight html %}
+{% highlight css %}
     --color: #fff;
 {% endhighlight %}
 使用两个破折号开头来定义一个变量，且区分大小写，所以`--color`和`--COLOR`是两个不同的变量。我们还可以这样用:
-{% highlight html %}
+{% highlight css %}
     --foo: if(x > 5) this.width = 10;
 {% endhighlight %}
 虽然这样的写法在普通属性中是无效的，但它可以在运行时被Javascript读取并执行，这是预处理器所不能做到的。
@@ -62,7 +62,7 @@ CSS变量，也叫做CSS自定义属性。他们可用于减少CSS中的重复�
 ![CSS级联](http://navcd-1252873427.cosgz.myqcloud.com/head_img/CSS%E7%BA%A7%E8%81%94.png)
 
 因此，我们可以使用自定义属性在媒体查询中做响应式设计
-{% highlight html %}
+{% highlight css %}
     :root {
       --gutter: 4px;
     }
@@ -82,12 +82,12 @@ CSS变量，也叫做CSS自定义属性。他们可用于减少CSS中的重复�
 
 #### var()函数
 我们使用`var()`函数来引用自定义属性
-{% highlight html %}
+{% highlight css %}
     var(<custom-property-name> [, <declaration-value> ]? )
 {% endhighlight %}
 `<custom-property-name>`是使用者定义的自定义属性名，`<declaration-value>`代表自定义属性名无效时的替代项(替代项会覆盖继承自父元素的样式)，传递多个替代项时，以最后一个替代项为准。
 
-{% highlight html %}
+{% highlight css %}
     /* CSS */
     div { 
         --color: green;
@@ -115,7 +115,7 @@ CSS变量，也叫做CSS自定义属性。他们可用于减少CSS中的重复�
 
 #### 用calc()构建值
 可以使用`calc()`函数来动态生成值
-{% highlight html %}
+{% highlight css %}
     .foo {
       --gap: 20;
       margin-top: calc(var(--gap) * 1px);
@@ -140,7 +140,7 @@ CSS变量，也叫做CSS自定义属性。他们可用于减少CSS中的重复�
 使用`getPropertyValue()`方法可以获取到自定义属性的值。
 {% highlight javascript %}
     var styles = getComputedStyle(document.documentElement);
-    var value = String(styles.getPropertyValue('--mainColor')).trim();
+     var value = String(styles.getPropertyValue('--mainColor')).trim();
     // value = 'orange'
 {% endhighlight %}
 

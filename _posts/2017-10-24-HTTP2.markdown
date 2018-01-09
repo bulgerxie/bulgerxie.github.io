@@ -48,19 +48,19 @@ HTTP2通过"首部表"来对跟踪和存储之前发送过的首部键值对，�
 
 首先新建文件夹，在该目录下创建公私密钥:
 
-{% highlight html %}  
+{% highlight bash %}
     > openssl req -new -newkey rsa:2048 -nodes -keyout localhost.key -out localhost.csr 
     
-    > openssl x509 -req -days 365 -in localhost.csr -signkey localhost.key -out localhost.crt
+     > openssl x509 -req -days 365 -in localhost.csr -signkey localhost.key -out localhost.crt
 {% endhighlight %}
 
 创建package.json文件:
-{% highlight html %}  
+{% highlight bash %}
     > npm init -y
 {% endhighlight %}
 
 再安装HTTP2包:
-{% highlight html %}  
+{% highlight bash %}
     > npm i --save-dev http2
 {% endhighlight %}
 
@@ -81,7 +81,7 @@ HTTP2通过"首部表"来对跟踪和存储之前发送过的首部键值对，�
 {% endhighlight %}
 
 启动服务:
-{% highlight html %}  
+{% highlight bash %}
     > node app.js
 {% endhighlight %}
 
