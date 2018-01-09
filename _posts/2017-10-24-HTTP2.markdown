@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Web性能优化之TTP2"
+title:  "Web性能优化之HTTP2"
 date:   2017-10-24
 category: 网络基础
 spend: 
